@@ -75,7 +75,7 @@
       gap: 20px;
     }
 
-    .profile2 img {
+    .profile2 .image1 {
       width: 100px;
       height: 100px;
       object-fit: cover;
@@ -268,16 +268,289 @@
   transform: scale(1.1);
 }
 
-</style>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+   #languageToggle {
+      position: absolute;
+      top: 20px;
+      right: 70px;
+      font-size: 1.5em;
+      background: transparent;
+      border: none;
+      padding: 0em 0em;
+      border-radius: 0px;
+      cursor: pointer;
+      z-index: 1000;
+      transition: background 0.3s;
+    }
+
+
+  #languageToggle {
+    position: absolute;
+    top: 20px;
+    right: 70px;
+  
+  }
+
+  #languageToggle:hover {
+      /* Aumenta el tamaño un 10% */
+    transition: transform 0.8s;
+    transform: scale(1.2);
+  }
+
+  
+
+.profile2 .image2 {
+  
+  margin-top:6px;
+  width: 30px;
+  height: 20px;
+  object-fit: cover;
+  border: 1px solid black;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+  </style>
 </head>
+
+
+
+
+
+
+
+
+
+
+<script defer>
+    const translations = {
+      es: {
+        title1: "Currículum",
+        nave1: "Inicio",
+        nave2: "Currículum",
+        nave3: "Proyectos",
+        nave4: "Trabajos",
+        nave5: "Prensa",
+        title3: "Currículum",
+        bod1: "Formación Académica",
+        bod2: "Grado en Ingeniería Industrial – Universidad Politécnica de Madrid (2017 – 2025)",
+        bod3: "Máster en Automatización y Robótica – Universidad de Stuttgart (2025 – 2026)",
+        bod4: "Experiencia Profesional",
+        bod5: "Ingeniero de Automatización – Siemens AG (2021 – Actualidad)",
+        bod6: "Técnico de Procesos Industriales – Repsol (2018 – 2019)",
+        bod7: "Habilidades Técnicas",
+        bod8: "Lenguajes",
+        bod9: "Python, C++, HTML, CSS, VHDL",
+        bod10: "Automatización",
+        bod11: "PLCs, Controladores PID, sensores",
+        bod12: "Robótica",
+        bod13: "MATLAB, Simulink, Arduino (ESP32) y AVR, control cinemático y dinámico",
+        bod14: "Idiomas",
+        bod15: "Español",
+        bod16: " Nativo",
+        bod17: "Gallego",
+        bod18: " Nativo",
+        bod19: "Inglés",
+        bod20: " B2",
+        bod21: "Alemán",
+        bod22: " A2",
+        bod23: "Certificaciones (Enlaces)",
+        bod24: "First Certificate in English Nivel B2",
+        bod25: "Curso Avanzado de Python (Santander Open Academy)",
+        bod26: "Introducción a HTML, CSS y JavaScript (IBM–Coursera)",
+        bod27: "CS50: Introducción a la Informática (Harvard)",
+        bod28: "Programa de Especialización: Machine Learning (Stanford–Coursera)",
+        bod29: "Machine Learning con Python (IBM–Coursera)",
+        bod30: "Certificado Profesional en Machine Learning (IBM–Coursera)",
+        bod31: "CS50's Introducción a la Inteligencia Artificial con Python (Harvard)",
+        bod32: "Uso de Python para la Investigación (Harvard)",
+        bod33: "Ciencia de Datos: Machine Learning (Harvard)"
+
+      },
+
+      en: {
+        title1:"Curriculum",
+        nave1:"Home",
+        nave2:"Curriculum",
+        nave3:"Projects",
+        nave4:"Jobs",
+        nave5:"Press",
+        title3:"Project",
+        bod1:"",
+        bod2:"",
+        bod3:"",
+        bod4:"",
+        bod5:"",
+        bod6:"",
+        bod7:"",
+        bod8:"",
+        bod9:"",
+        bod10:"",
+        bod11:"",
+        bod12:"",
+        bod13:"",
+        bod14:"",
+        bod15:"",
+        bod16:"",
+        bod17:"",
+        bod18:"",
+        bod19:"",
+        bod20:"",
+        bod21:"",
+        bod22:"",
+        bod23:"",
+        bod24:"",
+        bod25:"",
+        bod26:"",
+        bod27:"",
+        bod28:"",
+        bod29:"",
+        bod30:"",
+        bod31:"",
+        bod32:"",
+        bod33:"",
+        bod34:"",
+        bod35:"",
+        bod36:"",
+        bod37:"",
+        bod38:"",
+        bod39:"",
+        bod40:"",
+        bod41:"",
+        bod42:"",
+        bod43:"",
+        bod44:"",
+        bod45:"",
+        bod46:"",
+        bod47:"",
+        bod48:"",
+        bod49:"",
+        bod50:"",
+        bod51:"",
+        bod52:"",
+        bod53:"",
+        bod54:"",
+        bod55:"",
+        bod56:"",
+        bod57:""
+
+
+      }
+    };
+
+    function setLanguage(lang) {
+      localStorage.setItem("lang", lang);
+      document.querySelectorAll("[data-key]").forEach(el => {
+        const key = el.getAttribute("data-key");
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+
+      const toggleBtn = document.getElementById("languageToggle");
+      if (toggleBtn) {
+  toggleBtn.innerHTML = lang === "es"
+    ? '<img src="https://flagcdn.com/w40/gb.png" alt="English"  class="image2">'
+    : '<img src="https://flagcdn.com/w40/es.png" alt="Español"  class="image2">';
+  }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const currentLang = localStorage.getItem("lang") || "es";
+      setLanguage(currentLang);
+
+      const toggleBtn = document.getElementById("languageToggle");
+      if (toggleBtn) {
+        toggleBtn.addEventListener("click", () => {
+          const newLang = localStorage.getItem("lang") === "es" ? "en" : "es";
+          setLanguage(newLang);
+        });
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <body>
   <header>
     <div class="profile2">
-      <img src="../Images/yo.jpg" alt="Foto de Santiago Bartolomé Romero Vila">
+      <img src="../Images/yo.jpg" alt="Foto de Santiago Bartolomé Romero Vila" class="image1">
       <div class="info">
         <h1><a href="../SantiagoRomeroVila.html">Santiago Bartolomé Romero Vila</a></h1>
       </div>
+      <button id="languageToggle">🌐</button>
       <button id="modeToggle">🌙</button>
     </div>
     <h2 class="titulo-centrado">Projects</h2>

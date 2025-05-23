@@ -56,7 +56,7 @@
       gap: 20px;
     }
 
-    .profile2 img {
+    .profile2 .image1 {
       width: 100px;
       height: 100px;
       object-fit: cover;
@@ -200,54 +200,189 @@
     body.dark-mode .icon-dark {
       display: inline;
     }
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+   #languageToggle {
+      position: absolute;
+      top: 20px;
+      right: 70px;
+      font-size: 1.5em;
+      background: transparent;
+      border: none;
+      padding: 0em 0em;
+      border-radius: 0px;
+      cursor: pointer;
+      z-index: 1000;
+      transition: background 0.3s;
+    }
+
+
+  #languageToggle {
+    position: absolute;
+    top: 20px;
+    right: 70px;
+  
+  }
+
+  #languageToggle:hover {
+      /* Aumenta el tamaño un 10% */
+    transition: transform 0.8s;
+    transform: scale(1.2);
+  }
+
+  
+
+.profile2 .image2 {
+  
+  margin-top:6px;
+  width: 30px;
+  height: 20px;
+  object-fit: cover;
+  border: 1px solid black;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
   </style>
+</head>
+
+
+
+
+
+
+
+
+
+
+<script defer>
+    const translations = {
+      es: {
+         title1: "Prensa",
+         nave1: "Inicio",
+         nave2: "Currículum",
+         nave3: "Proyectos",
+         nave4: "Trabajos",
+         nave5: "Prensa",
+         title3: "Prensa",
+         bod1: "Madridiario: Un AT-AT de Star Wars desfila por Ciudad Universitaria",
+         bod2: "Este artículo de Madridiario cubre el proyecto de ingeniería galardonado que lideré en 2019 en el Colegio Mayor Moncloa, donde dirigí el diseño y la construcción de una réplica a escala real de un AT-AT como parte de un concurso local de Fallas. El proyecto destacó por su diseño modular innovador, la coordinación del equipo y la ejecución técnica — obteniendo finalmente el primer lugar y el reconocimiento de la Fundación Ingenio de la UPM."
+
+      },
+
+      en: {
+        title1:"Press",
+        nave1:"Home",
+        nave2:"Curriculum",
+        nave3:"Projects",
+        nave4:"Jobs",
+        nave5:"Press",
+        title3:"Press",
+        bod1:"Madridiario: Un AT-AT de Star Wars desfila por Ciudad Universitaria",
+        bod2:"This article by Madridiario covers the award-winning engineering project I led in 2019 at Colegio Mayor Moncloa, where I directed the design and construction of a life-size AT-AT replica as part of a local Falla competition. The project stood out for its innovative modular design, team coordination, and technical execution — ultimately earning first place and recognition from UPM's Fundación Ingenio."
+
+      }
+    };
+
+    function setLanguage(lang) {
+      localStorage.setItem("lang", lang);
+      document.querySelectorAll("[data-key]").forEach(el => {
+        const key = el.getAttribute("data-key");
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+
+      const toggleBtn = document.getElementById("languageToggle");
+      if (toggleBtn) {
+  toggleBtn.innerHTML = lang === "es"
+    ? '<img src="https://flagcdn.com/w40/gb.png" alt="English"  class="image2">'
+    : '<img src="https://flagcdn.com/w40/es.png" alt="Español"  class="image2">';
+  }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const currentLang = localStorage.getItem("lang") || "es";
+      setLanguage(currentLang);
+
+      const toggleBtn = document.getElementById("languageToggle");
+      if (toggleBtn) {
+        toggleBtn.addEventListener("click", () => {
+          const newLang = localStorage.getItem("lang") === "es" ? "en" : "es";
+          setLanguage(newLang);
+        });
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body>
   <header>
     <div class="profile2">
-      <img src="Images/yo.jpg" alt="Foto de Santiago Bartolomé Romero Vila">
+      <img src="Images/yo.jpg" alt="Foto de Santiago Bartolomé Romero Vila" class="image1">
       <div class="info">
         <h1><a href="SantiagoRomeroVila.html">Santiago Bartolomé Romero Vila</a></h1>
       </div>
+      <button id="languageToggle">🌐</button>
       <button id="modeToggle">🌙</button>
     </div>
-    <h2 class="titulo-centrado">Press</h2>
+    <h2 class="titulo-centrado" data-key="title3"></h2>
   </header>
 
+  
   <nav>
-    <a href="SantiagoRomeroVila.html">Home</a>
-    <a href="curriculum.html">Curriculum</a>
-    <a href="proyectos.html">Projects</a>
-    <a href="trabajos.html">Jobs</a>
-    <a href="prensa.html">Press</a>
+    <a href="SantiagoRomeroVila.html" data-key="nave1"></a>
+    <a href="curriculum.html" data-key="nave2"></a>
+    <a href="proyectos.html" data-key="nave3"></a>
+    <a href="trabajos.html" data-key="nave4"></a>
+    <a href="prensa.html" data-key="nave5"></a>
   </nav>
 
   <main>
 
   <section>
     <a href="prensa/prensa-atat.html" class="news-item">
-      <h3>“AT-AT arde en Madrid”: cobertura del proyecto estrella de la Falla 2019</h3>
-      <p>This article by Madridiario covers the award-winning engineering project I led in 2019 at Colegio Mayor Moncloa, where I directed the design and 
+      <h3 data-key="bod1">“AT-AT arde en Madrid”: cobertura del proyecto estrella de la Falla 2019</h3>
+      <p data-key="bod2">This article by Madridiario covers the award-winning engineering project I led in 2019 at Colegio Mayor Moncloa, where I directed the design and 
         construction of a life-size AT-AT replica as part of a local Falla competition. The project stood out for its innovative modular design, team 
         coordination, and technical execution — ultimately earning first place and recognition from UPM's Fundación Ingenio.</p>
     </a>
-<!--
-    <a href="prensa/prensa1.html" class="news-item">
-      <h3>Nuevo sistema IoT para gestión energética presentado en Tech4Green 2024</h3>
-      <p>Santiago presentó un innovador sistema de monitorización energética basado en IoT...</p>
-    </a>
 
-    <a href="prensa/prensa2.html" class="news-item">
-      <h3>Reconocimiento en el certamen de jóvenes ingenieros de la UPM</h3>
-      <p>Por su trabajo en automatización agrícola, Santiago fue galardonado con el premio...</p>
-    </a>
-
-    <a href="prensa/prensa3.html" class="news-item">
-      <h3>Colaboración con Siemens AG en el desarrollo de soluciones SCADA avanzadas</h3>
-      <p>Participación destacada en un proyecto piloto de Siemens sobre sistemas de control remoto...</p>
-    </a>
-  
--->
   
   </section>
   </main>

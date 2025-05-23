@@ -56,7 +56,7 @@
       gap: 20px;
     }
 
-    .profile2 img {
+    .profile2 .image1 {
       width: 100px;
       height: 100px;
       object-fit: cover;
@@ -236,69 +236,185 @@
 
 
 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+   #languageToggle {
+      position: absolute;
+      top: 20px;
+      right: 70px;
+      font-size: 1.5em;
+      background: transparent;
+      border: none;
+      padding: 0em 0em;
+      border-radius: 0px;
+      cursor: pointer;
+      z-index: 1000;
+      transition: background 0.3s;
+    }
+
+
+  #languageToggle {
+    position: absolute;
+    top: 20px;
+    right: 70px;
+  
+  }
+
+  #languageToggle:hover {
+      /* Aumenta el tamaño un 10% */
+    transition: transform 0.8s;
+    transform: scale(1.2);
+  }
+
+  
+
+.profile2 .image2 {
+  
+  margin-top:6px;
+  width: 30px;
+  height: 20px;
+  object-fit: cover;
+  border: 1px solid black;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
   </style>
 </head>
+
+
+
+
+
+
+
+
+
+
+<script defer>
+    const translations = {
+      es: {
+        title1: "Proyectos2",
+        nave1: "Inicio",
+        nave2: "Currículum",
+        nave3: "Proyectos",
+        nave4: "Trabajos",
+        nave5: "Prensa",
+        title3: "Proyectos",
+        bod1: "Construcción de un Recomendador Semántico de Libros: Aprovechando el PLN y la Similitud para una Lectura Personalizada",
+        bod2: "El Recomendador Semántico de Libros es un proyecto de aprendizaje automático diseñado para ofrecer recomendaciones de lectura inteligentes y personalizadas, basadas en el contenido semántico de las preferencias del usuario y las descripciones de los libros. En lugar de depender de valoraciones o filtrado colaborativo, este sistema utiliza técnicas de Procesamiento del Lenguaje Natural (PLN) para captar el significado de los libros y las consultas del usuario, permitiendo recomendaciones más matizadas y flexibles.",
+        bod3: "← Anterior"
+
+      },
+
+      en: {
+        title1:"Projects2",
+        nave1:"Home",
+        nave2:"Curriculum",
+        nave3:"Projects",
+        nave4:"Jobs",
+        nave5:"Press",
+        title3:"Projects",
+        bod1:"Build a Semantic Book Recommender: Leveraging NLP and Similarity for Personalized Reading",
+        bod2:"The Semantic Book Recommender is a machine learning project designed to provide intelligent and personalized book recommendations based on the semantic content of user preferences and book descriptions. Rather than relying on user ratings or collaborative filtering, this system uses Natural Language Processing (NLP) techniques to capture the meaning of books and user queries, enabling more nuanced and flexible recommendations.",
+        bod3:"← Prev"
+
+
+      }
+    };
+
+    function setLanguage(lang) {
+      localStorage.setItem("lang", lang);
+      document.querySelectorAll("[data-key]").forEach(el => {
+        const key = el.getAttribute("data-key");
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+
+      const toggleBtn = document.getElementById("languageToggle");
+      if (toggleBtn) {
+  toggleBtn.innerHTML = lang === "es"
+    ? '<img src="https://flagcdn.com/w40/gb.png" alt="English"  class="image2">'
+    : '<img src="https://flagcdn.com/w40/es.png" alt="Español"  class="image2">';
+  }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const currentLang = localStorage.getItem("lang") || "es";
+      setLanguage(currentLang);
+
+      const toggleBtn = document.getElementById("languageToggle");
+      if (toggleBtn) {
+        toggleBtn.addEventListener("click", () => {
+          const newLang = localStorage.getItem("lang") === "es" ? "en" : "es";
+          setLanguage(newLang);
+        });
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <body>
   <header>
     <div class="profile2">
-      <img src="../../Images/yo.jpg" alt="Foto de Santiago Bartolomé Romero Vila">
+      <img src="../../Images/yo.jpg" alt="Foto de Santiago Bartolomé Romero Vila" class="image1">
       <div class="info">
         <h1><a href="../../SantiagoRomeroVila.html">Santiago Bartolomé Romero Vila</a></h1>
       </div>
+      <button id="languageToggle">🌐</button>
       <button id="modeToggle">🌙</button>
     </div>
-    <h2 class="titulo-centrado">Projects</h2>
+    <h2 class="titulo-centrado" data-key="title3"></h2>
   </header>
 
   <nav>
-    <a href="../../SantiagoRomeroVila.html">Home</a>
-    <a href="../../curriculum.html">Curriculum</a>
-    <a href="../../proyectos.html">Projects</a>
-    <a href="../../trabajos.html">Jobs</a>
-    <a href="../../prensa.html">Press</a>
+    <a href="../../SantiagoRomeroVila.html" data-key="nave1"></a>
+    <a href="../../curriculum.html" data-key="nave2"></a>
+    <a href="../../proyectos.html" data-key="nave3"></a>
+    <a href="../../trabajos.html" data-key="nave4"></a>
+    <a href="../../prensa.html" data-key="nave5"></a>
   </nav>
 
   <main>
 
   <section>
 
-    <a href="../proyecto4.html" class="project">
-      <h3> Build a Semantic Book Recommender - Python, OpenAI</h3>
-      <p> The Semantic Book Recommender is a machine learning project designed to provide intelligent and personalized book recommendations based on the semantic content of user preferences and book descriptions. Rather than relying on user ratings or collaborative filtering, this system uses Natural Language Processing (NLP) techniques to capture the meaning of books and user queries, enabling more nuanced and flexible recommendations.</p>
+    <a href="../SemanticBookRecommender.html" class="project">
+      <h3 data-key="bod1"> </h3>
+      <p data-key="bod2"></p>
     </a>
 
-<!--
-    <a href="proyectos/carwash.html" class="project">
-      <h3>Embedded Systems Development with AVR-C and ATmega640</h3>
-      <p>I developed an embedded system in C and assembly to control a fully automated car wash using an ATmega640 microcontroller. The system coordinates motors,
-       sensors, rollers, dryers, an entry barrier, and a traffic light through a state machine and timers. I implemented PWM, debouncing, and 
-       reverse detection, and used an AVR Dragon debugger for real-time testing. The project required precise control, safety management, and 
-       synchronization of multiple mechanical components, consolidating my skills in microcontroller programming, digital electronics, and 
-       real-time system design.
-    </p>
-    </a>
 
-    <a href="proyectos/roboticarm.html" class="project">
-      <h3>Design and Control of a Three Degrees of Freedom Robotic Arm with MATLAB Interface and PID Control on ESP32</h3>
-      <p>A three-degrees-of-freedom robotic arm was designed and controlled using an ESP32 and a graphical interface developed in MATLAB. The system uses one stepper motor and two DC motors with encoders, all controlled by real-time PID algorithms. Trajectories are calculated in MATLAB using inverse kinematics and sent as commands to the microcontroller. The application allows visualization of the desired versus actual trajectory and includes error analysis. The system achieves precise control by integrating electronics, embedded programming, and kinematic modeling.
-        </p>
-    </a>
-
-    <a href="proyectos/SpaceInvaders.html" class="project">
-      <h3>Game Development with OpenGL and C++</h3>
-      <p>
-        I developed a Space Invaders clone using C++ and OpenGL as part of an academic project. It was my first experience with graphics 
-        programming and OpenGL. We applied object-oriented programming to structure the game, which helped me solidify key concepts and gain 
-        practical experience in interactive software development.
-      </p>
-    </a>
-
-    <a href="proyectos/proyecto-atat.html" class="project">
-      <h3>Personnel Management and Execution of the AT-AT Falla Project (All Terrain Armored Transport)</h3>
-      <p>I led a multidisciplinary project that combined creativity, engineering, and team management: the design and construction of a temporary structure inspired by a Star Wars AT-AT for the Colegio Mayor Moncloa's annual "Falla" competition. This internal contest required students to submit fully developed proposals, including technical drawings, logistics plans, and feasibility studies. My project was selected as the winner from among four competing submissions.
-      </p>
-    </a>
--->
  
   </section>
 
@@ -306,7 +422,7 @@
 
 
   <div class="pagination-buttons">
-  <a href="../../proyectos.html" class="btn prev">← Prev</a>
+  <a href="../../proyectos.html" class="btn prev" data-key="bod3"></a>
 <!--  <a href="page3.html" class="btn next">Next →</a>-->
 
 </div>

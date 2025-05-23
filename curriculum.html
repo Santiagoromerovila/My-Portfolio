@@ -67,7 +67,7 @@
       gap: 20px;
     }
 
-    .profile2 img {
+    .profile2 .image1 {
       width: 100px;
       height: 100px;
       object-fit: cover;
@@ -224,75 +224,281 @@ section ul li a:hover {
   text-decoration: underline;
 }
 
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+   #languageToggle {
+      position: absolute;
+      top: 20px;
+      right: 70px;
+      font-size: 1.5em;
+      background: transparent;
+      border: none;
+      padding: 0em 0em;
+      border-radius: 0px;
+      cursor: pointer;
+      z-index: 1000;
+      transition: background 0.3s;
+    }
+
+
+  #languageToggle {
+    position: absolute;
+    top: 20px;
+    right: 70px;
+  
+  }
+
+  #languageToggle:hover {
+      /* Aumenta el tamaño un 10% */
+    transition: transform 0.8s;
+    transform: scale(1.2);
+  }
+
+  
+
+.profile2 .image2 {
+  
+  margin-top:6px;
+  width: 30px;
+  height: 20px;
+  object-fit: cover;
+  border: 1px solid black;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
   </style>
 </head>
+
+
+
+
+
+
+
+
+
+
+<script defer>
+    const translations = {
+      es: {
+        title1: "Currículum",
+        nave1: "Inicio",
+        nave2: "Currículum",
+        nave3: "Proyectos",
+        nave4: "Trabajos",
+        nave5: "Prensa",
+        title3: "Currículum",
+        bod1: "Formación Académica",
+        bod2: "Grado en Ingeniería Industrial – Universidad Politécnica de Madrid (2017 – 2025)",
+        bod3: "Máster en Automatización y Robótica – Universidad de Stuttgart (2025 – 2026)",
+        bod4: "Experiencia Profesional",
+        bod5: "Ingeniero de Automatización – Siemens AG (2021 – Actualidad)",
+        bod6: "Técnico de Procesos Industriales – Repsol (2018 – 2019)",
+        bod7: "Habilidades Técnicas",
+        bod8: "Lenguajes",
+        bod9: "Python, C++, HTML, CSS, VHDL",
+        bod10: "Automatización",
+        bod11: "PLCs, Controladores PID, sensores",
+        bod12: "Robótica",
+        bod13: "MATLAB, Simulink, Arduino (ESP32) y AVR, control cinemático y dinámico",
+        bod14: "Idiomas",
+        bod15: "Español",
+        bod16: " Nativo",
+        bod17: "Gallego",
+        bod18: " Nativo",
+        bod19: "Inglés",
+        bod20: " B2",
+        bod21: "Alemán",
+        bod22: " A2",
+        bod23: "Certificaciones (Enlaces)",
+        bod24: "First Certificate in English Nivel B2",
+        bod25: "Curso Avanzado de Python (Santander Open Academy)",
+        bod26: "Introducción a HTML, CSS y JavaScript (IBM–Coursera)",
+        bod27: "CS50: Introducción a la Informática (Harvard)",
+        bod28: "Programa de Especialización: Machine Learning (Stanford–Coursera)",
+        bod29: "Machine Learning con Python (IBM–Coursera)",
+        bod30: "Certificado Profesional en Machine Learning (IBM–Coursera)",
+        bod31: "CS50's Introducción a la Inteligencia Artificial con Python (Harvard)",
+        bod32: "Uso de Python para la Investigación (Harvard)",
+        bod33: "Ciencia de Datos: Machine Learning (Harvard)"
+
+      },
+
+      en: {
+        title1:"Curriculum",
+        nave1:"Home",
+        nave2:"Curriculum",
+        nave3:"Projects",
+        nave4:"Jobs",
+        nave5:"Press",
+        title3:"Curriculum",
+        bod1:"Education",
+        bod2:"Bachelor’s Degree in Industrial Engineering – Polytechnic University of Madrid (2017 – 2025)",
+        bod3:"Master’s Degree in Automation and Robotics – University of Stuttgart (2025 – 2026)",
+        bod4:"Professional Experience",
+        bod5:"Automation Engineer – Siemens AG (2021 – Present)",
+        bod6:"Industrial Process Technician – Repsol (2018 – 2019)",
+        bod7:"Technical Skills",
+        bod8:"Languages",
+        bod9:"Python, C++, HTML, CSS, VHDL",
+        bod10:"Automation",
+        bod11:"PLCs, PID Controllers, sensors",
+        bod12:"Robotics",
+        bod13:"MATLAB, Simulink, Arduino (ESP32) and AVR, kinematic and dynamic control",
+        bod14:"Idiomas",
+        bod15:"Spanish",
+        bod16:" Native",
+        bod17:"Galician",
+        bod18:" Native",
+        bod19:"English",
+        bod20:" B2",
+        bod21:"German",
+        bod22:" A2",
+        bod23:"Certifications (Links)",
+        bod24:"First Certificate in English Level B2",
+        bod25:"Advanced Python Course (Santander Open Academy)",
+        bod26:"Introduction to HTML, CSS, and JavaScript (IBM–Coursera)",
+        bod27:"CS50: Introduction to Computer Science (Harvard)",
+        bod28:"Specialization Program: Machine Learning (Stanford–Coursera)",
+        bod29:"Machine Learning with Python (IBM–Coursera)",
+        bod30:"Professional Certificate in Machine Learning (IBM–Coursera)",
+        bod31:"CS50's Introduction to Artificial Intelligence with Python (Harvard)",
+        bod32:"Using Python for Research (Harvard)",
+        bod33:"Data Science: Machine Learning (Harvard)",
+
+      }
+    };
+
+    function setLanguage(lang) {
+      localStorage.setItem("lang", lang);
+      document.querySelectorAll("[data-key]").forEach(el => {
+        const key = el.getAttribute("data-key");
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+
+      const toggleBtn = document.getElementById("languageToggle");
+      if (toggleBtn) {
+  toggleBtn.innerHTML = lang === "es"
+    ? '<img src="https://flagcdn.com/w40/gb.png" alt="English"  class="image2">'
+    : '<img src="https://flagcdn.com/w40/es.png" alt="Español"  class="image2">';
+  }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const currentLang = localStorage.getItem("lang") || "es";
+      setLanguage(currentLang);
+
+      const toggleBtn = document.getElementById("languageToggle");
+      if (toggleBtn) {
+        toggleBtn.addEventListener("click", () => {
+          const newLang = localStorage.getItem("lang") === "es" ? "en" : "es";
+          setLanguage(newLang);
+        });
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <body>
 
   <header>
     <div class="profile2">
-      <img src="Images/yo.jpg" alt="Foto de Santiago Bartolomé Romero Vila">
+      <img src="Images/yo.jpg" alt="Foto de Santiago Bartolomé Romero Vila" class="image1">
       <div class="info">
         <h1><a href="SantiagoRomeroVila.html">Santiago Bartolomé Romero Vila</a></h1>
       </div>
+      <button id="languageToggle">🌐</button>
       <button id="modeToggle">🌙</button>
     </div>
-    <h2 class="titulo-centrado">Curriculum</h2>
+    <h2 class="titulo-centrado" data-key="title3"></h2>
   </header>
 
+  
   <nav>
-    <a href="SantiagoRomeroVila.html">Home</a>
-    <a href="curriculum.html">Curriculum</a>
-    <a href="proyectos.html">Projects</a>
-    <a href="trabajos.html">Jobs</a>
-    <a href="prensa.html">Press</a>
+    <a href="SantiagoRomeroVila.html" data-key="nave1"></a>
+    <a href="curriculum.html" data-key="nave2"></a>
+    <a href="proyectos.html" data-key="nave3"></a>
+    <a href="trabajos.html" data-key="nave4"></a>
+    <a href="prensa.html" data-key="nave5"></a>
   </nav>
+
 
   <main>
   <section>
-    <h3>Education</h3>
+    <h3 data-key="bod1"></h3>
     <ul>
-      <li><span class="item-title">Bachelor’s Degree in Industrial Engineering – Polytechnic University of Madrid (2017 – 2025)</li>
-       <!--
-      <li><span class="item-title">Master’s Degree in Automation and Robotics – University of Stuttgart (2025 – 2026)</li>
+      <li><span class="item-title" data-key="bod2"></span></li>
+      <!--  
+      <li><span class="item-title" data-key="bod3"></span></li>
         -->
     </ul>
     <!--
-    <h3>Professional Experience</h3>
+    <h3 data-key="bod4"></h3>
     <ul>
-      <li><span class="item-title">Automation Engineer – Siemens AG (2021 – Present)</li>
-      <li><span class="item-title">Industrial Process Technician – Repsol (2018 – 2019)</li>
+      <li><span class="item-title" data-key="bod5"></span></li>
+      <li><span class="item-title" data-key="bod6"></span></li>
     </ul>
     -->
 
-    <h3>Technical Skills</h3>
+
+    <h3 data-key="bod7">Technical Skills</h3>
     <ul>
-      <li><b>Languages:</b> Python, C++, HTML, CSS, VHDL</li>
-      <li><b>Automation:</b> PLCs, PID Controllers, sensors</li>
-      <li><b>Robotics:</b> MATLAB, Simulink, Arduino (ESP32) and AVR, kinematic and dynamic control</li>
+      <li><strong data-key="bod8"></strong> : <span data-key="bod9"></span></li>
+      <li><strong data-key="bod10"></strong> : <span data-key="bod11"></span></li>
+      <li><strong data-key="bod12"></strong> : <span data-key="bod13"></span></li>
     </ul>
 
-    <h3>Idiomas</h3>
+    <h3 data-key="bod14">Idiomas</h3>
     <ul>
-      <li><b>Spanish</b> – Native</li>
-      <li><b>Galician</b> – Native</li>
-      <li><b>English</b> – B2</li>
-      <li><b>German</b> – A2</li>
+    <li><strong data-key="bod15"></strong> - <span data-key="bod16"></span></li>
+      <li><strong data-key="bod17"></strong> - <span data-key="bod18"></span></li>
+      <li><strong data-key="bod19"></strong> - <span data-key="bod20"></span></li>
+      <li><strong data-key="bod21"></strong> - <span data-key="bod22"></span></li>
     </ul>
 
-    <h3>Certifications (Links)</h3>
+    <h3 data-key="bod23">Certifications (Links)</h3>
     <ul>
-      <li>First Certificate in English Level B2</li>
-      <li><a href="https://www.linkedin.com/in/santiago-bartolom%C3%A9-romero-vila/overlay/1746897662337/single-media-viewer/?profileId=ACoAAER50YMBNjS9EdDlKyH8YQIvvIz_f95L6tY" target="_blank" rel="noopener noreferrer">Advanced Python Course (Santander Open Academy)</a></li>
+      <li data-key="bod24"></li>
+      <li><a href="https://www.linkedin.com/in/santiago-bartolom%C3%A9-romero-vila/overlay/1746897662337/single-media-viewer/?profileId=ACoAAER50YMBNjS9EdDlKyH8YQIvvIz_f95L6tY" target="_blank" rel="noopener noreferrer" data-key="bod25"></a></li>
       <!--
-      <li><a href="https://www.coursera.org/learn/introduction-html-css-javascript" target="_blank" rel="noopener noreferrer">Introduction to HTML, CSS, and JavaScript (IBM–Coursera)</a></li>
-      <li><a href="https://pll.harvard.edu/course/cs50-introduction-computer-science" target="_blank" rel="noopener noreferrer">CS50: Introduction to Computer Science (Harvard)</a></li>
-      <li><a href="https://www.coursera.org/specializations/machine-learning-introduction?action=enroll" target="_blank" rel="noopener noreferrer">Specialization Program: Machine Learning (Stanford–Coursera))</a></li>
-      <li><a href="https://www.coursera.org/learn/machine-learning-with-python/" target="_blank" rel="noopener noreferrer">Machine Learning with Python (IBM–Coursera)</a></li>
-      <li><a href="https://www.coursera.org/professional-certificates/ibm-machine-learning#outcomes" target="_blank" rel="noopener noreferrer">Professional Certificate in Machine Learning (IBM–Coursera)</a></li>
-      <li><a href="https://pll.harvard.edu/course/cs50s-introduction-artificial-intelligence-python" target="_blank" rel="noopener noreferrer">CS50's Introduction to Artificial Intelligence with Python (Harvard)</a></li>
-      <li><a href="https://pll.harvard.edu/course/using-python-research" target="_blank" rel="noopener noreferrer">Using Python for Research (Harvard)</a></li>
-      <li><a href="https://pll.harvard.edu/course/data-science-machine-learning/2025-04" target="_blank" rel="noopener noreferrer">Data Science: Machine Learning (Harvard)</a></li>
-    -->
+      <li><a href="https://www.coursera.org/learn/introduction-html-css-javascript" target="_blank" rel="noopener noreferrer" data-key="bod26"></a></li>
+      <li><a href="https://pll.harvard.edu/course/cs50-introduction-computer-science" target="_blank" rel="noopener noreferrer" data-key="bod27"></a></li>
+      <li><a href="https://www.coursera.org/specializations/machine-learning-introduction?action=enroll" target="_blank" rel="noopener noreferrer" data-key="bod28"></a></li>
+      <li><a href="https://www.coursera.org/learn/machine-learning-with-python/" target="_blank" rel="noopener noreferrer" data-key="bod29"></a></li>
+      <li><a href="https://www.coursera.org/professional-certificates/ibm-machine-learning#outcomes" target="_blank" rel="noopener noreferrer" data-key="bod30"></a></li>
+      <li><a href="https://pll.harvard.edu/course/cs50s-introduction-artificial-intelligence-python" target="_blank" rel="noopener noreferrer" data-key="bod31"></a></li>
+      <li><a href="https://pll.harvard.edu/course/using-python-research" target="_blank" rel="noopener noreferrer" data-key="bod32"></a></li>
+      <li><a href="https://pll.harvard.edu/course/data-science-machine-learning/2025-04" target="_blank" rel="noopener noreferrer" data-key="bod33"></a></li>
+      -->
     </ul>
   </section>
 

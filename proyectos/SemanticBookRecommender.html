@@ -304,6 +304,9 @@
 
 
 
+    
+
+
    #languageToggle {
       position: absolute;
       top: 20px;
@@ -347,55 +350,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</style>
-
+  </style>
 </head>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -597,8 +553,6 @@
 
 
 
-
-
 <body>
   <header>
     <div class="profile2">
@@ -606,9 +560,9 @@
       <div class="info">
         <h1><a href="../SantiagoRomeroVila.html">Santiago Bartolomé Romero Vila</a></h1>
       </div>
-      <button id="languageToggle">🌐</button>
-      <button id="modeToggle">🌙</button>
-    </div>
+        <button id="languageToggle">🌐</button>
+        <button id="modeToggle">🌙</button>
+       </div>
     <h2 class="titulo-centrado">Projects</h2>
   </header>
 
@@ -623,11 +577,11 @@
 <header1 class="titulo-centrado">
     <h2>
       <p>
-         Design and Development of a Dynamic Personal Web Portfolio  </p>
+         Build a Semantic Book Recommender: Leveraging NLP and Similarity for Personalized Reading  </p>
     
     </h2>
     <p class="meta-info">
-        July, 2025 · 1034 words · Santiago Bartolomé Romero Vila
+        Currently · - words · Santiago Bartolomé Romero Vila
     </p>
 
     <!--
@@ -639,25 +593,25 @@
   <main>
      <section>
     <p>
-    This project involves the design, coding, and evolution of a personal portfolio website developed as a professional platform. The site was built from scratch using HTML, CSS, and JavaScript after completing an introductory web development course offered by IBM on Coursera. This website serves both as a professional showcase and a continuous learning environment, applying key concepts in accessibility, responsive design, interface management, and user experience.
+    The Semantic Book Recommender is a machine learning project designed to provide intelligent and personalized book recommendations based on the semantic content of user preferences and book descriptions. Rather than relying on user ratings or collaborative filtering, this system uses Natural Language Processing (NLP) techniques to capture the meaning of books and user queries, enabling more nuanced and flexible recommendations.
 
+    </p>
+
+    <p>
+        Built using Python and popular NLP libraries, this project showcases the practical application of TF-IDF, word embeddings, and cosine similarity in a real-world scenario, delivering a system that goes beyond traditional keyword matching.
 
     </p>
 
 
-
-      <h3>Introduction</h3>
+      <h3>Motivation</h3>
       <p>
-        Personal digital presence has become a strategic tool for both students and professionals. Beyond platforms like LinkedIn or GitHub, having a personal website allows full control over content presentation, visual style, and professional narrative. With this in mind, I decided to develop a personal website from scratch to integrate knowledge acquired through HTML and CSS training and to progressively expand it as my web development skills grow.      </p>
+        Traditional recommendation systems (like those used in e-commerce or streaming) often rely on collaborative filtering—suggesting items based on the behavior of other users. However, such systems struggle when:
+        </p>
 
-       <p>
-   This portfolio serves a dual purpose:
-
-
-  </p>
    <ul>
-    <li><strong>Professional showcase: </strong>To display my resume, technical projects, work experience, and achievements.</li>
-    <li><strong>Experimental environment:</strong> To apply, adapt, and continuously practice new web technologies and development methodologies.</li>
+    <li><strong>There’s no user interaction history </strong>(cold start problem).</li>
+    <li><strong>The dataset is sparse or unbalanced.</strong> </li>
+    <li><strong>The goal is semantic alignment</strong> rather than popularity. </li>
   </ul>
 
 
@@ -674,31 +628,35 @@
     <li><strong>Logical separation between structure, style, and functionality.</strong></li>
   </ul>
 
-    <p>From there, the website was enriched with animations, dark mode, dynamic buttons, intuitive navigation, and modern design practices (flat design, safe web typography, visual hierarchy, etc.).</p>
+    <p>This project aims to solve these issues by using content-based filtering, particularly focusing on the textual descriptions of books.</p>
 
-
-   <h3>Website Structure</h3>
+   <h3>Dataset</h3>
       
   <p>
-    The site is divided into several interconnected sections, navigable through a persistent navigation bar:  </p>
+    The dataset used includes:  </p>
 
 
      <ul>
-    <li><strong>Home / About Me:</strong>Personal introduction, interests, and key skills.</li>
-    <li><strong>Resume:</strong>Education, languages, technical skills, and experience. </li>
-    <li><strong>Projects:</strong>Detailed project descriptions with images, videos, and technical write-ups.</li>
-    <li><strong>Work: </strong>Highlights of professional experience.</li>
+    <li><strong>Title: </strong>The name of the book.</li>
+    <li><strong>Author</strong> </li>
+    <li><strong>Genre</strong> or tags</li>
+    <li><strong>Description: </strong>A short summary of the book's content.</li>
     <li><strong>Press:</strong>Media appearances or featured events.</li>
   </ul>
 
-<p>Each section is designed with a clean, content-centered approach and optimized for both desktop and mobile devices.</p>
+<p>Example source: [Goodreads API], [Kaggle book datasets], or manually curated JSON/CSV files.</p>
 
 
-      <h3>  Technical Features</h3>
-      <h4>Semantic HTML</h4>
+      <h3>  Project Pipeline</h3>
+      <h4>Preprocessing Book Descriptions</h4>
 
-    <p>A rigorous use of semantic tags like &lt;header&gt;, &lt;nav&gt;, &lt;section&gt;, &lt;main&gt;, &lt;footer&gt; was implemented to improve accessibility and optimize SEO. Relevant meta tags are also used for search engines and social media.</p>
+    <p>Clean and prepare book descriptions using standard NLP techniques:
 
+        </p>
+
+
+        <p><strong> PAGE IN DEVELOPMENT</strong></p>
+ <!--      
        <h4>Visual Design with CSS</h4>
 
        <p>The visual design is centralized using CSS variables (:root), allowing easy switching of full color palettes (light/dark mode, backgrounds, text and link colors).</p>
@@ -810,7 +768,7 @@ The site remains a living platform, constantly evolving - just like the professi
   
   <p> The code can be found in my <a href="https://github.com/Santiagoromerovila/My-Portfolio" target="blank" rel="noopener noreferrer">Github</a>. </p>
 
-
+--> 
 
     </section>
   </main>
