@@ -147,6 +147,7 @@
       margin: auto;
       padding: 40px 20px;
     }
+  
 
     .project {
       background-color: var(--card-bg);
@@ -365,115 +366,90 @@
 <script defer>
     const translations = {
       es: {
-        title1: "Currículum",
+        title1: "Semantic Book Recommender Project",
         nave1: "Inicio",
         nave2: "Currículum",
         nave3: "Proyectos",
-        nave4: "Trabajos",
+        nave4: "Experiencia",
         nave5: "Prensa",
-        title3: "Currículum",
-        bod1: "Formación Académica",
-        bod2: "Grado en Ingeniería Industrial – Universidad Politécnica de Madrid (2017 – 2025)",
-        bod3: "Máster en Automatización y Robótica – Universidad de Stuttgart (2025 – 2026)",
-        bod4: "Experiencia Profesional",
-        bod5: "Ingeniero de Automatización – Siemens AG (2021 – Actualidad)",
-        bod6: "Técnico de Procesos Industriales – Repsol (2018 – 2019)",
-        bod7: "Habilidades Técnicas",
-        bod8: "Lenguajes",
-        bod9: "Python, C++, HTML, CSS, VHDL",
-        bod10: "Automatización",
-        bod11: "PLCs, Controladores PID, sensores",
-        bod12: "Robótica",
-        bod13: "MATLAB, Simulink, Arduino (ESP32) y AVR, control cinemático y dinámico",
-        bod14: "Idiomas",
-        bod15: "Español",
-        bod16: " Nativo",
-        bod17: "Gallego",
-        bod18: " Nativo",
-        bod19: "Inglés",
-        bod20: " B2",
-        bod21: "Alemán",
-        bod22: " A2",
-        bod23: "Certificaciones (Enlaces)",
-        bod24: "First Certificate in English Nivel B2",
-        bod25: "Curso Avanzado de Python (Santander Open Academy)",
-        bod26: "Introducción a HTML, CSS y JavaScript (IBM–Coursera)",
-        bod27: "CS50: Introducción a la Informática (Harvard)",
-        bod28: "Programa de Especialización: Machine Learning (Stanford–Coursera)",
-        bod29: "Machine Learning con Python (IBM–Coursera)",
-        bod30: "Certificado Profesional en Machine Learning (IBM–Coursera)",
-        bod31: "CS50's Introducción a la Inteligencia Artificial con Python (Harvard)",
-        bod32: "Uso de Python para la Investigación (Harvard)",
-        bod33: "Ciencia de Datos: Machine Learning (Harvard)"
+        title3: "Proyecto",
+        bod1: "Desarrollo de un Recomendador Semántico de Libros: Aplicando PLN ",
+        bod2: "El Recomendador Semántico de Libros es un proyecto de aprendizaje automático diseñado para ofrecer recomendaciones inteligentes y personalizadas de libros, basadas en el contenido semántico de las preferencias del usuario y las descripciones de los libros. En lugar de basarse en valoraciones de usuarios o filtrado colaborativo, este sistema utiliza técnicas de Procesamiento de Lenguaje Natural (PLN) para captar el significado de los libros y de las consultas del usuario, permitiendo recomendaciones más matizadas y flexibles.",
+        bod3: "Construido usando Python y bibliotecas populares de PLN, este proyecto muestra la aplicación práctica de TF-IDF, embeddings de palabras y similitud del coseno en un escenario del mundo real, ofreciendo un sistema que va más allá de la coincidencia de palabras clave tradicional.",
+        bod4: "Motivación",
+        bod5: "Los sistemas de recomendación tradicionales (como los usados en comercio electrónico o streaming) suelen basarse en filtrado colaborativo —sugerir ítems según el comportamiento de otros usuarios. Sin embargo, estos sistemas presentan dificultades cuando:",
+        bod6: "No existe historial de interacción del usuario ",
+        bod7: "(problema de arranque en frío).",
+        bod8: "El conjunto de datos es escaso o desequilibrado.",
+        bod9: "El objetivo es la alineación semántica ",
+        bod10: "más que la popularidad.",
+        bod11: "Enfoque Tecnológico y Formación",
+        bod12: "El desarrollo del sitio comenzó tras completar un curso de fundamentos de HTML, CSS y JavaScript ofrecido por IBM. Este curso proporcionó las bases para entender la estructura semántica de una página web, la separación entre contenido (HTML) y presentación (CSS), así como principios clave como:",
+        bod13: "Diseño responsive.",
+        bod14: "Buenas prácticas de accesibilidad.",
+        bod15: "Separación lógica entre estructura, estilo y funcionalidad.",
+        bod16: "Este proyecto busca resolver estos problemas usando filtrado basado en contenido, centrado especialmente en las descripciones textuales de los libros.",
+        bod17: "Conjunto de Datos",
+        bod18: "El dataset utilizado incluye: ",
+        bod19: "Título: ",
+        bod20: "El nombre del libro.",
+        bod21: "Autor",
+        bod22: "Género",
+        bod23: " o etiquetas",
+        bod24: "Descripción: ",
+        bod25: "Un breve resumen del contenido del libro.",
+        bod26: "Prensa:",
+        bod27: "Apariciones en medios o eventos destacados.",
+        bod28: "Ejemplo de fuente: [API de Goodreads], [Datasets de libros en Kaggle], o archivos JSON/CSV curados manualmente.",
+        bod29: "Proceso del Proyecto",
+        bod30: "Preprocesamiento de Descripciones de Libros",
+        bod31: "Limpieza y preparación de las descripciones usando técnicas estándar de PLN:",
+        bod32: "PÁGINA EN DESARROLLO",
+        bod33:"y Similitud para una Lectura Personalizada"
 
       },
 
       en: {
-        title1:"Curriculum",
+        title1:"Semantic Book Recommender Project",
         nave1:"Home",
         nave2:"Curriculum",
         nave3:"Projects",
         nave4:"Jobs",
         nave5:"Press",
         title3:"Project",
-        bod1:"",
-        bod2:"",
-        bod3:"",
-        bod4:"",
-        bod5:"",
-        bod6:"",
-        bod7:"",
-        bod8:"",
-        bod9:"",
-        bod10:"",
-        bod11:"",
-        bod12:"",
-        bod13:"",
-        bod14:"",
-        bod15:"",
-        bod16:"",
-        bod17:"",
-        bod18:"",
-        bod19:"",
-        bod20:"",
-        bod21:"",
-        bod22:"",
-        bod23:"",
-        bod24:"",
-        bod25:"",
-        bod26:"",
-        bod27:"",
-        bod28:"",
-        bod29:"",
-        bod30:"",
-        bod31:"",
-        bod32:"",
-        bod33:"",
-        bod34:"",
-        bod35:"",
-        bod36:"",
-        bod37:"",
-        bod38:"",
-        bod39:"",
-        bod40:"",
-        bod41:"",
-        bod42:"",
-        bod43:"",
-        bod44:"",
-        bod45:"",
-        bod46:"",
-        bod47:"",
-        bod48:"",
-        bod49:"",
-        bod50:"",
-        bod51:"",
-        bod52:"",
-        bod53:"",
-        bod54:"",
-        bod55:"",
-        bod56:"",
-        bod57:""
-
+        bod1:"Build a Semantic Book Recommender: Leveraging NLP and Similarity",
+        bod2:"The Semantic Book Recommender is a machine learning project designed to provide intelligent and personalized book recommendations based on the semantic content of user preferences and book descriptions. Rather than relying on user ratings or collaborative filtering, this system uses Natural Language Processing (NLP) techniques to capture the meaning of books and user queries, enabling more nuanced and flexible recommendations.",
+        bod3:"Built using Python and popular NLP libraries, this project showcases the practical application of TF-IDF, word embeddings, and cosine similarity in a real-world scenario, delivering a system that goes beyond traditional keyword matching.",
+        bod4:"Motivation",
+        bod5:"Traditional recommendation systems (like those used in e-commerce or streaming) often rely on collaborative filtering—suggesting items based on the behavior of other users. However, such systems struggle when:",
+        bod6:"There’s no user interaction history ",
+        bod7:"(cold start problem).",
+        bod8:"The dataset is sparse or unbalanced.",
+        bod9:"The goal is semantic alignment",
+        bod10:" rather than popularity.",
+        bod11:"Training and Technological Approach",
+        bod12:"The website development began after completing a foundational HTML, CSS, and JavaScript course offered by IBM. This course provided the fundamentals for understanding the semantic structure of a web page, the separation of content (HTML) and presentation (CSS), as well as key principles such as:",
+        bod13:"Responsive design.",
+        bod14:"Best practices in accessibility.",
+        bod15:"Logical separation between structure, style, and functionality.",
+        bod16:"This project aims to solve these issues by using content-based filtering, particularly focusing on the textual descriptions of books.",
+        bod17:"Dataset",
+        bod18:"The dataset used includes: ",
+        bod19:"Title: ",
+        bod20:"The name of the book.",
+        bod21:"Author",
+        bod22:"Genre",
+        bod23:" or tags",
+        bod24:"Description: ",
+        bod25:"A short summary of the book's content.",
+        bod26:"Press:",
+        bod27:"Media appearances or featured events.",
+        bod28:"Example source: [Goodreads API], [Kaggle book datasets], or manually curated JSON/CSV files.",
+        bod29:"Project Pipeline",
+        bod30:"Preprocessing Book Descriptions",
+        bod31:"Clean and prepare book descriptions using standard NLP techniques:",
+        bod32:" PAGE IN DEVELOPMENT",
+        bod33:"for Personalized Reading"
 
       }
     };
@@ -563,22 +539,21 @@
         <button id="languageToggle">🌐</button>
         <button id="modeToggle">🌙</button>
        </div>
-    <h2 class="titulo-centrado">Projects</h2>
+    <h2 class="titulo-centrado" data-key="title3"></h2>
   </header>
 
   <nav>
-    <a href="../SantiagoRomeroVila.html">Home</a>
-    <a href="../curriculum.html">Curriculum</a>
-    <a href="../proyectos.html">Projects</a>
-    <a href="../trabajos.html">Jobs</a>
-    <a href="../prensa.html">Press</a>
+    <a href="../SantiagoRomeroVila.html" data-key="nave1"></a>
+    <a href="../curriculum.html" data-key="nave2"></a>
+    <a href="../proyectos.html" data-key="nave3"></a>
+    <!--<a href="trabajos.html" data-key="nave4"></a>-->
+    <a href="../prensa.html" data-key="nave5"></a>
   </nav>
 
 <header1 class="titulo-centrado">
     <h2>
-      <p>
-         Build a Semantic Book Recommender: Leveraging NLP and Similarity for Personalized Reading  </p>
-    
+      <p data-key="bod1"></p>
+      <p  data-key="bod33"></p>
     </h2>
     <p class="meta-info">
         Currently · - words · Santiago Bartolomé Romero Vila
@@ -592,70 +567,64 @@
 
   <main>
      <section>
-    <p>
-    The Semantic Book Recommender is a machine learning project designed to provide intelligent and personalized book recommendations based on the semantic content of user preferences and book descriptions. Rather than relying on user ratings or collaborative filtering, this system uses Natural Language Processing (NLP) techniques to capture the meaning of books and user queries, enabling more nuanced and flexible recommendations.
-
+    <p  data-key="bod2">
+    
     </p>
 
-    <p>
-        Built using Python and popular NLP libraries, this project showcases the practical application of TF-IDF, word embeddings, and cosine similarity in a real-world scenario, delivering a system that goes beyond traditional keyword matching.
-
+    <p  data-key="bod3">
+      
     </p>
 
 
-      <h3>Motivation</h3>
-      <p>
-        Traditional recommendation systems (like those used in e-commerce or streaming) often rely on collaborative filtering—suggesting items based on the behavior of other users. However, such systems struggle when:
-        </p>
+      <h3 data-key="bod4"></h3>
+      <p data-key="bod5">
+         </p>
 
    <ul>
-    <li><strong>There’s no user interaction history </strong>(cold start problem).</li>
-    <li><strong>The dataset is sparse or unbalanced.</strong> </li>
-    <li><strong>The goal is semantic alignment</strong> rather than popularity. </li>
+    <li><strong  data-key="bod6"></strong><span data-key="bod7"></span></li>
+    <li><strong  data-key="bod8"></strong> </li>
+    <li><strong  data-key="bod9"></strong><span data-key="bod10"> </span></li>
   </ul>
 
 
 
-       <h3>Training and Technological Approach</h3>
-  <p>
-   The website development began after completing a foundational HTML, CSS, and JavaScript course offered by IBM. This course provided the fundamentals for understanding the semantic structure of a web page, the separation of content (HTML) and presentation (CSS), as well as key principles such as:
-
-
+       <h3  data-key="bod11"></h3>
+  <p data-key="bod12">
   </p>
    <ul>
-    <li><strong>Responsive design.</strong></li>
-    <li><strong>Best practices in accessibility.</strong> </li>
-    <li><strong>Logical separation between structure, style, and functionality.</strong></li>
+    <li><strong data-key="bod13"></strong></li>
+    <li><strong data-key="bod14"></strong> </li>
+    <li><strong data-key="bod15"></strong></li>
   </ul>
 
-    <p>This project aims to solve these issues by using content-based filtering, particularly focusing on the textual descriptions of books.</p>
+    <p data-key="bod16"></p>
 
-   <h3>Dataset</h3>
+   <h3 data-key="bod17"></h3>
       
-  <p>
-    The dataset used includes:  </p>
+  <p data-key="bod18">
+     </p>
 
 
      <ul>
-    <li><strong>Title: </strong>The name of the book.</li>
-    <li><strong>Author</strong> </li>
-    <li><strong>Genre</strong> or tags</li>
-    <li><strong>Description: </strong>A short summary of the book's content.</li>
-    <li><strong>Press:</strong>Media appearances or featured events.</li>
+    <li><strong data-key="bod19"></strong><span data-key="bod20"></span></li>
+    <li><strong data-key="bod21"></strong> </li>
+    <li><strong data-key="bod22"></strong><span data-key="bod23"></span></li>
+    <li><strong data-key="bod24"></strong><span data-key="bod25"></span></li>
+    <li><strong data-key="bod26"></strong><span data-key="bod27"></span></li>
   </ul>
 
-<p>Example source: [Goodreads API], [Kaggle book datasets], or manually curated JSON/CSV files.</p>
+<p data-key="bod28"></p>
 
 
-      <h3>  Project Pipeline</h3>
-      <h4>Preprocessing Book Descriptions</h4>
+      <h3 data-key="bod29"></h3>
+      <h4 data-key="bod30"></h4>
 
-    <p>Clean and prepare book descriptions using standard NLP techniques:
+    <p data-key="bod31">
 
         </p>
 
 
-        <p><strong> PAGE IN DEVELOPMENT</strong></p>
+        <p><strong data-key="bod32"></strong></p>
  <!--      
        <h4>Visual Design with CSS</h4>
 

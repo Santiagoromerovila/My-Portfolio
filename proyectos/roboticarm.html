@@ -363,115 +363,220 @@
 <script defer>
     const translations = {
       es: {
-        title1: "Currículum",
+        title1: "Web Personal",
         nave1: "Inicio",
         nave2: "Currículum",
         nave3: "Proyectos",
         nave4: "Trabajos",
         nave5: "Prensa",
-        title3: "Currículum",
-        bod1: "Formación Académica",
-        bod2: "Grado en Ingeniería Industrial – Universidad Politécnica de Madrid (2017 – 2025)",
-        bod3: "Máster en Automatización y Robótica – Universidad de Stuttgart (2025 – 2026)",
-        bod4: "Experiencia Profesional",
-        bod5: "Ingeniero de Automatización – Siemens AG (2021 – Actualidad)",
-        bod6: "Técnico de Procesos Industriales – Repsol (2018 – 2019)",
-        bod7: "Habilidades Técnicas",
-        bod8: "Lenguajes",
-        bod9: "Python, C++, HTML, CSS, VHDL",
-        bod10: "Automatización",
-        bod11: "PLCs, Controladores PID, sensores",
-        bod12: "Robótica",
-        bod13: "MATLAB, Simulink, Arduino (ESP32) y AVR, control cinemático y dinámico",
-        bod14: "Idiomas",
-        bod15: "Español",
-        bod16: " Nativo",
-        bod17: "Gallego",
-        bod18: " Nativo",
-        bod19: "Inglés",
-        bod20: " B2",
-        bod21: "Alemán",
-        bod22: " A2",
-        bod23: "Certificaciones (Enlaces)",
-        bod24: "First Certificate in English Nivel B2",
-        bod25: "Curso Avanzado de Python (Santander Open Academy)",
-        bod26: "Introducción a HTML, CSS y JavaScript (IBM–Coursera)",
-        bod27: "CS50: Introducción a la Informática (Harvard)",
-        bod28: "Programa de Especialización: Machine Learning (Stanford–Coursera)",
-        bod29: "Machine Learning con Python (IBM–Coursera)",
-        bod30: "Certificado Profesional en Machine Learning (IBM–Coursera)",
-        bod31: "CS50's Introducción a la Inteligencia Artificial con Python (Harvard)",
-        bod32: "Uso de Python para la Investigación (Harvard)",
-        bod33: "Ciencia de Datos: Machine Learning (Harvard)"
+        title3: "Proyecto",
+        bod1: "Diseño y Control de un Brazo Robótico de Tres Grados de Libertad",
+        bod2: "con Interfaz MATLAB y Control PID en ESP32",
+        bod3: "En este proyecto, desarrollado como parte de un curso universitario de automatización y robótica, se diseñó y construyó un brazo robótico de tres grados de libertad, compuesto por un motor paso a paso y dos motores de corriente continua con encoders. El objetivo principal fue implementar un sistema de control de posición preciso usando una arquitectura de control distribuido, con un ESP32 como unidad de control en tiempo real y una interfaz gráfica (GUI) desarrollada en MATLAB App Designer. Se implementaron cinemática inversa, control PID, seguimiento de trayectorias y evaluación de errores en el espacio cartesiano. Este trabajo proporciona una base técnica sólida en programación embebida, control de sistemas mecatrónicos y desarrollo de interfaces de usuario para aplicaciones robóticas.",
+        bod4: "A",
+        bod5: "Introducción",
+        bod6: "El desarrollo de sistemas robóticos con múltiples grados de libertad plantea desafíos técnicos significativos relacionados con la precisión de movimiento, sincronización de actuadores e interpretación de comandos del usuario. En este proyecto, el equipo abordó la construcción de un brazo robótico articulado controlado desde MATLAB, con el objetivo de mover su efector final a posiciones específicas en el espacio 3D con precisión y trazabilidad.",
+        bod7: "Arquitectura del Sistema",
+        bod8: "El sistema está compuesto por tres subsistemas principales:",
+        bod9: "Subsistema mecánico:",
+        bod10: " Brazo robótico articulado con dos eslabones de longitud conocida.",
+        bod11: "Subsistema de control embebido:",
+        bod12: " Implementado en una ",
+        bod13: "placa ESP32 ",
+        bod14: "responsable del control de motores y lectura de encoders.",
+        bod15: "Subsistema de interfaz de usuario:",
+        bod16: " Aplicación desarrollada en ",
+        bod17: "MATLAB App Designer ",
+        bod18: "que calcula trayectorias, envía comandos y visualiza resultados.",
+        bod19: "Actuadores y Sensores",
+        bod20: "Motor Paso a Paso (SM)",
+        bod21: "motor paso a paso bipolar ",
+        bod22: "se utiliza para controlar la rotación del brazo en el plano XY. Este motor está conectado al ESP32 mediante los pines de dirección (dirPin), paso (stepPin) y habilitación (enablePin). El control se realiza generando manualmente trenes de pulsos con delayMicroseconds, y el cálculo de pasos se basa en el ángulo deseado, convirtiendo grados a pasos usando:",
+        bod23: "Motores DC con Encoders",
+        bod24: "Dos motores DC controlan la",
+        bod25: " altura y extensión del brazo",
+        bod26: ". Estos motores están equipados con ",
+        bod27: "Control de Velocidad y Dirección",
+        bod28: "La velocidad se controla mediante ",
+        bod29: "PWM",
+        bod30: ", y la dirección se establece usando pines digitales. Se implementó lógica de inversión de dirección basada en la posición angular del motor para evitar errores de rotación cuando el motor gira más de 90°.",
+        bod31: "Control PID en Tiempo Real",
+        bod32: "Cada motor DC se controla mediante un ",
+        bod33: "algoritmo PID ",
+        bod34: "programado directamente en el ESP32. Este control asegura que se alcance y mantenga la posición deseada a pesar de perturbaciones o imprecisiones mecánicas.",
+        bod35: "El cálculo PID incluye:",
+        bod36: "error = posición_actual - posición_deseada",
+        bod37: "Derivada e integral del error",
+        bod38: "Anti-windup para evitar acumulación excesiva del error integral",
+        bod39: "El código implementado asegura que el motor se detenga si el error está dentro de una ",
+        bod40: "tolerancia predefinida ",
+        bod41: "(TOLERANCE = 50), para evitar oscilaciones y sobrecalentamiento.",
+        bod42: "Cinemática Inversa y Trayectorias",
+        bod43: "Estudio Cinemático",
+        bod44: "Se implementó un ",
+        bod45: "modelo de cinemática inversa ",
+        bod46: "para el brazo robótico en función de sus dimensiones (L2 = 12 cm, L3 = 15 cm). El modelo sigue una estructura tipo SCARA modificada y convierte coordenadas cartesianas deseadas (Px, Py, Pz) en ángulos de motor:",
+        bod47: "q1: ángulo del motor paso a paso (base)",
+        bod48: "q2 y q3: ángulos de los motores DC (altura y extensión)",
+        bod49: "La solución se basa en fórmulas derivadas de geometría y trigonometría inversa:",
+        bod50: "Se generan trayectorias de ",
+        bod51: "21 puntos equidistantes ",
+        bod52: "en el espacio cartesiano y luego se convierten en secuencias de ángulos para cada motor.",
+        bod53: "Conversión de Ángulo a Pulsos",
+        bod54: "Los ángulos se convierten en pulsos para los motores DC utilizando:",
+        bod55: "Esta conversión es clave para alinear los comandos de MATLAB con el sistema de control embebido.",
+        bod56: "Interfaz de Usuario en MATLAB (HMI)",
+        bod57: "La aplicación gráfica desarrollada en MATLAB App Designer permite:",
+        bod58: "Entrada de coordenadas objetivo.",
+        bod59: "Iniciar/detener la comunicación con el ESP32.",
+        bod60: "Enviar trayectorias y visualizar la ejecución.",
+        bod61: "Verificar si el punto está dentro del espacio de trabajo (elipsoide con condiciones de seguridad).",
+        bod62: "Mostrar posición actual recibida del robot.",
+        bod63: "Validación del Espacio de Trabajo",
+        bod64: "Antes de mover el brazo, el sistema verifica si el punto ingresado es válido usando una función de inclusión en elipsoide truncado:",
+        bod65: "Esta restricción asegura la integridad del robot y evita movimientos imposibles.",
+        bod66: "Gráficas y Análisis de Errores",
+        bod67: "Una de las funciones más útiles del sistema es la generación de gráficos 3D que comparan:",
+        bod68: "Trayectoria deseada (verde).",
+        bod69: "Trayectoria ejecutada real (rojo punteado).",
+        bod70: "Error punto a punto (puntos codificados por color).",
+        bod71: "Se calcula el error euclidiano entre las trayectorias deseada y real para validar experimentalmente la precisión del sistema:",
+        bod72: "Esta visualización proporciona una herramienta poderosa para depurar y mejorar el sistema de control.",
+        bod73: "Resultados y Aprendizajes",
+        bod74: "Resultados Obtenidos",
+        bod75: "Control funcional y robusto de un brazo robótico de 3 GDL.",
+        bod76: "Comunicación efectiva MATLAB–ESP32 establecida.",
+        bod77: "La interfaz MATLAB permite control intuitivo y visualización clara.",
+        bod78: "El sistema mantiene un error generalmente bajo (< 1 cm), adecuado para aplicaciones educativas y de prototipado.",
+        bod79: "Aprendizajes Clave",
+        bod80: "Motores Paso a Paso vs. Motores DC",
+        bod81: "Paso a paso: Precisión de paso, ideal para rotación de base. Fácil de controlar sin encoder, pero requiere cuidado para evitar pérdida de pasos.",
+        bod82: "DC con encoder: Requiere control PID, pero ofrece movimiento más suave, mayor potencia y retroalimentación directa.",
+        bod83: "Control PID",
+        bod84: "Ajustar kp, ki, kd es crítico. Anti-windup es importante.",
+        bod85: "Implementar PID directamente en el microcontrolador permite respuesta rápida y en tiempo real.",
+        bod86: "MATLAB App Designer",
+        bod87: "Herramienta potente para construir interfaces gráficas.",
+        bod88: "Permite abstraer comandos complejos con diseño amigable.",
+        bod89: "Integración serial robusta y rápida.",
+        bod90: "Conclusión",
+        bod91: "Este proyecto permitió la integración de hardware, control y software en una solución robótica educativa completa. Mediante herramientas como ESP32, MATLAB y conocimientos de control automático, se logró un sistema funcional que resuelve cinemática inversa, ejecuta trayectorias y mide errores, todo en una plataforma accesible y modular.",
+        bod92: "El equipo trabajó colaborativamente para abordar desafíos técnicos, adaptar soluciones y documentar exhaustivamente cada fase. El resultado no solo cumple objetivos académicos, sino que también sirve como base sólida para futuras extensiones, como control en lazo cerrado con visión, integración de sensores de fuerza o generación autónoma de trayectorias.",
+        bod93: "Todo el código se puede encontrar en mi ",
+        bod94: "Showcase",
+        bod98: "encoders de cuadratura ",
+        bod99: "para una medición precisa de posición. Los encoders están conectados a pines con interrupciones (attachInterrupt) para registrar cada pulso generado por el movimiento del eje."
+
 
       },
 
       en: {
-        title1:"Curriculum",
+        title1:"Personal Web",
         nave1:"Home",
         nave2:"Curriculum",
         nave3:"Projects",
         nave4:"Jobs",
         nave5:"Press",
         title3:"Project",
-        bod1:"",
-        bod2:"",
-        bod3:"",
-        bod4:"",
-        bod5:"",
-        bod6:"",
-        bod7:"",
-        bod8:"",
-        bod9:"",
-        bod10:"",
-        bod11:"",
-        bod12:"",
-        bod13:"",
-        bod14:"",
-        bod15:"",
-        bod16:"",
-        bod17:"",
-        bod18:"",
-        bod19:"",
-        bod20:"",
-        bod21:"",
-        bod22:"",
-        bod23:"",
-        bod24:"",
-        bod25:"",
-        bod26:"",
-        bod27:"",
-        bod28:"",
-        bod29:"",
-        bod30:"",
-        bod31:"",
-        bod32:"",
-        bod33:"",
-        bod34:"",
-        bod35:"",
-        bod36:"",
-        bod37:"",
-        bod38:"",
-        bod39:"",
-        bod40:"",
-        bod41:"",
-        bod42:"",
-        bod43:"",
-        bod44:"",
-        bod45:"",
-        bod46:"",
-        bod47:"",
-        bod48:"",
-        bod49:"",
-        bod50:"",
-        bod51:"",
-        bod52:"",
-        bod53:"",
-        bod54:"",
-        bod55:"",
-        bod56:"",
-        bod57:""
-
+        bod1: "Design and Control of a Three Degrees of Freedom Robotic Arm",
+        bod2: "with MATLAB Interface and PID Control on ESP32",
+        bod3: " In this project, developed as part of a university course on automation and robotics, a three-degrees-of-freedom robotic arm was designedand built, consisting of one stepper motor and two DC motors with encoders. The main goal was to implement a precise position control system using a distributed control architecture, with an ESP32 as the real-time control unit and a graphical user interface (GUI) developed in MATLAB App Designer. Inverse kinematics, PID control, trajectory monitoring, and error evaluation in Cartesian space were implemented. This work provides a solid technical foundation in embedded programming, control of mechatronic systems, and user interface development for robotic applications.",
+        bod4: "A",
+        bod5: "Introduction",
+        bod6: "The development of robotic systems with multiple degrees of freedom poses significant technical challenges related to motion accuracy, actuator synchronization, and interpretation of user commands. In this project, the team tackled the construction of an articulated robotic arm controlled from MATLAB, aiming to move its end effector to specific positions in 3D space with accuracy and traceability.",
+        bod7: "System Architecture",
+        bod8: "The system is composed of three main subsystems:",
+        bod9: "Mechanical subsystem:",
+        bod10: "Articulated robotic arm with two links of known length.",
+        bod11: "Embedded control subsystem:",
+        bod12: " Implemented on an  ",
+        bod13: "ESP32 board,",
+        bod14: "responsible for motor control and encoder reading.",
+        bod15: "User interface subsystem:",
+        bod16: "Application developed in ",
+        bod17: "MATLAB App Designer",
+        bod18: ", which calculates trajectories, sends commands, and visualizes results.",
+        bod19: " Actuators and Sensors",
+        bod20: "Stepper Motor (SM)",
+        bod21: "bipolar stepper motor",
+        bod22: " is used to control rotation of the arm in the XY plane. This motor is connected to the ESP32 via direction (dirPin), step (stepPin), and enable (enablePin) pins. Control is carried out by manually generating pulse trains with delayMicroseconds, and step calculation is based on the desired angle, converting degrees to steps using:",
+        bod23: " DC Motors with Encoders",
+        bod24: "Two DC motors control the",
+        bod25: "height and extension of the arm",
+        bod26: ". These motors are equipped with ",
+        bod27: "Speed and Direction Control",
+        bod28: "Speed is controlled via ",
+        bod29: "PWM",
+        bod30: ", and direction is set using digital pins. Direction reversal logic based on the motor's angular position was implemented to prevent rotation errors when the motor rotates more than 90°.",
+        bod31: "Real-Time PID Control",
+        bod32: "Each DC motor is controlled using a ",
+        bod33: "PID algorithm",
+        bod34: " directly programmed on the ESP32. This control ensures the desired position is reached and maintained despite disturbances or mechanical inaccuracies.",
+        bod35: "PID calculation includes:",
+        bod36: "error = current_position - desired_position",
+        bod37: "Derivative and integral of the error",
+        bod38: "Anti-windup to avoid excessive integral error accumulation",
+        bod39: "The implemented code ensures the motor stops if the error is within a ",
+        bod40: "predefined tolerance",
+        bod41: " (TOLERANCE = 50), to avoid oscillations and overheating.",
+        bod42: "Inverse Kinematics and Trajectories",
+        bod43: "Kinematic Study",
+        bod44: "An ",
+        bod45: "inverse kinematics model",
+        bod46: " was implemented for the robotic arm based on its dimensions (L2 = 12 cm, L3 = 15 cm). The model follows a modified SCARA-type manipulator structure and converts desired Cartesian coordinates (Px, Py, Pz) into motor angles:",
+        bod47: "q1: stepper motor angle (base)",
+        bod48: "q2 and q3: DC motor angles (height and extension)",
+        bod49: "The solution is based on formulas derived from geometry and inverse trigonometry:",
+        bod50: "Trajectories of ",
+        bod51: "21 equidistant points",
+        bod52: " in Cartesian space are generated and then converted into angle sequences for each motor.",
+        bod53: "Angle to Pulse Conversion",
+        bod54: "Angles are converted to pulses for the DC motors using:",
+        bod55: "This conversion is key for aligning commands from MATLAB with the embedded control system.",
+        bod56: "MATLAB User Interface (HMI)",
+        bod57: "The graphical application developed in MATLAB App Designer allows:",
+        bod58: "Input of target coordinates.",
+        bod59: "Start/stop communication with the ESP32.",
+        bod60: "Sending trajectories and visualizing execution.",
+        bod61: "Verifying if the point is within the workspace (ellipsoid with safety conditions).",
+        bod62: "Displaying current position received from the robot.",
+        bod63: "Workspace Validation",
+        bod64: "Before moving the arm, the system checks whether the input point is valid using a truncated ellipsoid inclusion function:",
+        bod65: "This restriction ensures the robot’s integrity and prevents impossible movements.",
+        bod66: "Graphs and Error Analysis",
+        bod67: "One of the system’s most useful features is the generation of 3D plots comparing:",
+        bod68: "Desired trajectory (green).",
+        bod69: "Actual executed trajectory (dotted red).",
+        bod70: "Point-by-point error (color-coded dots).",
+        bod71: "Euclidean error between the desired and actual trajectories is calculated to experimentally validate system accuracy:",
+        bod72: "This visualization provides a powerful tool for debugging and improving the control system.",
+        bod73: "Results and Learnings",
+        bod74: "Achieved Results",
+        bod75: "Functional and robust control of a 3-DOF robotic arm.",
+        bod76: "Effective MATLAB–ESP32 communication established.",
+        bod77: "MATLAB interface allows intuitive control and clear visualization.",
+        bod78: "The system maintains generally low error (< 1 cm), suitable for educational and prototyping applications.",
+        bod79: "Key Learnings",
+        bod80: "Stepper Motors vs. DC Motors",
+        bod81: "Stepper: Step-precision, ideal for base rotation. Easy to control without encoder, but requires care to avoid missed steps.",
+        bod82: "DC with encoder: Requires PID control, but offers smoother motion, higher power, and direct feedback.",
+        bod83: "PID Control",
+        bod84: "Tuning kp, ki, kd is critical. Anti-windup is important.",
+        bod85: "Implementing PID directly on the microcontroller allows real-time and fast response.",
+        bod86: "MATLAB App Designer",
+        bod87: "Powerful tool for building graphical interfaces.",
+        bod88: "Allows abstraction of complex commands with user-friendly design.",
+        bod89: "Robust and fast serial integration.",
+        bod90: "Conclusion",
+        bod91: "This project enabled the integration of hardware, control, and software into a complete educational robotic solution. Through tools like the ESP32, MATLAB, and automatic control knowledge, a functional system was achieved that solves inverse kinematics, executes trajectories, and measures errors—all in an accessible and modular platform.",
+        bod92: "The team worked collaboratively to address technical challenges, adapt solutions, and thoroughly document each phase. The result not only meets academic goals but also serves as a solid foundation for future extensions, such as vision-based closed-loop control, force sensor integration, or autonomous trajectory generation.",
+        bod93: "All the code can be found in my ",
+        bod94: "Showcase",
+        bod95: "",
+        bod96: "",
+        bod97: "",
+        bod98: "quadrature encoders",
+        bod99: " for precise position measurement. The encoders are connected to interrupt-enabled pins (attachInterrupt) to record each pulse generated by shaft movement."      
 
       }
     };
@@ -553,23 +658,23 @@
       <button id="languageToggle">🌐</button>
       <button id="modeToggle">🌙</button>
     </div>
-    <h2 class="titulo-centrado">Projects</h2>
+    <h2 class="titulo-centrado" data-key="title3"></h2>
   </header>
 
   <nav>
-    <a href="../SantiagoRomeroVila.html">Home</a>
-    <a href="../curriculum.html">Curriculum</a>
-    <a href="../proyectos.html">Projects</a>
-    <a href="../trabajos.html">Jobs</a>
-    <a href="../prensa.html">Press</a>
+    <a href="../SantiagoRomeroVila.html" data-key="nave1"></a>
+    <a href="../curriculum.html" data-key="nave2"></a>
+    <a href="../proyectos.html" data-key="nave3"></a>
+    <!--<a href="trabajos.html" data-key="nave4"></a>-->
+    <a href="../prensa.html" data-key="nave5"></a>
   </nav>
 
 <header1 class="titulo-centrado">
     <h2>
-      <p>
-         Design and Control of a Three Degrees of Freedom Robotic Arm </p>
-      <p>
-         with MATLAB Interface and PID Control on ESP32
+      <p data-key="bod1">
+          </p>
+      <p data-key="bod2">
+         
       </p>
     </h2>
     <p class="meta-info">
@@ -584,41 +689,32 @@
 
   <main>
      <section>
-    <p>
-       In this project, developed as part of a university course on automation and robotics, a three-degrees-of-freedom robotic arm was designed
-        and built, consisting of one stepper motor and two DC motors with encoders. The main goal was to implement a precise position control 
-        system using a distributed control architecture, with an ESP32 as the real-time control unit and a graphical user interface (GUI) 
-        developed in MATLAB App Designer. Inverse kinematics, PID control, trajectory monitoring, and error evaluation in Cartesian space were 
-        implemented. This work provides a solid technical foundation in embedded programming, control of mechatronic systems, and user interface 
-        development for robotic applications.
+    <p data-key="bod3">
 
     </p>
 
 
 
-      <h3>Introduction</h3>
-      <p>The development of robotic systems with multiple degrees of freedom poses significant technical challenges related to motion accuracy, 
-        actuator synchronization, and interpretation of user commands. In this project, the team tackled the construction of an articulated 
-        robotic arm controlled from MATLAB, aiming to move its end effector to specific positions in 3D space with accuracy and traceability.
-        
+      <h3 data-key="bod5"></h3>
+      <p data-key="bod6">
       </p>
 
-       <h3>System Architecture</h3>
-  <p>
-   The system is composed of three main subsystems:
+       <h3 data-key="bod7"></h3>
+  <p data-key="bod8">
+   
 
 
   </p>
    <ul>
-    <li><strong>Mechanical subsystem:</strong>Articulated robotic arm with two links of known length.</li>
-    <li><strong>Embedded control subsystem:</strong> Implemented on an  <strong>ESP32 board,</strong>responsible for motor control and encoder reading.</li>
-    <li><strong>User interface subsystem:</strong>Application developed in <strong>MATLAB App Designer</strong>, which calculates trajectories, sends commands, and visualizes results.</li>
+    <li><strong data-key="bod9"></strong><span data-key="bod10"></span></li>
+    <li><strong data-key="bod11"></strong><span data-key="bod12"></span><strong data-key="bod13"></strong><span data-key="bod14"></span></li>
+    <li><strong data-key="bod15"></strong><span data-key="bod16"></span><strong data-key="bod17"></strong><span data-key="bod18"></span></li>
   </ul>
 
-   <h3> Actuators and Sensors</h3>
-      <h4>Stepper Motor (SM)</h4>
+   <h3 data-key="bod19"></h3>
+      <h4 data-key="bod20"></h4>
   <p>
-   A <strong> bipolar stepper motor</strong> is used to control rotation of the arm in the XY plane. This motor is connected to the ESP32 via direction (dirPin), step (stepPin), and enable (enablePin) pins. Control is carried out by manually generating pulse trains with delayMicroseconds, and step calculation is based on the desired angle, converting degrees to steps using:
+   <span data-key="bod4"></span> <strong data-key="bod21"> </strong><span data-key="bod22"></span>
   </p>
 
      <div class="code-container">
@@ -630,45 +726,45 @@ stepsDegrees = steps * (angle / 360);
   </code></pre>
 </div>
 
-      <h4> DC Motors with Encoders</h4>
+      <h4 data-key="bod23"></h4>
 
- <p>Two DC motors control the<strong>height and extension of the arm</strong>. These motors are equipped with <strong>quadrature encoders</strong> for precise position measurement. The encoders are connected to interrupt-enabled pins (attachInterrupt) to record each pulse generated by shaft movement.</p>
-
-
-       <h4>Speed and Direction Control</h4>
-
- <p>Speed is controlled via <strong>PWM</strong>, and direction is set using digital pins. Direction reversal logic based on the motor's angular position was implemented to prevent rotation errors when the motor rotates more than 90°.</p>
+ <p><span data-key="bod24"></span><strong data-key="bod25"></strong><span data-key="bod26"></span><strong data-key="bod98"></strong><span data-key="bod99"></span></p>
 
 
-  <h3>Real-Time PID Control</h3>
+       <h4 data-key="bod27"></h4>
+
+ <p><span data-key="bod28"></span><strong data-key="bod29"></strong><span data-key="bod30"></span></p>
+
+
+  <h3 data-key="bod31"></h3>
   <p>
-    Each DC motor is controlled using a <strong>PID algorithm</strong> directly programmed on the ESP32. This control ensures the desired position is reached and maintained despite disturbances or mechanical inaccuracies.
+    <span data-key="bod32"></span><strong data-key="bod33"></strong><span data-key="bod34"></span>
 
 
   </p>
 
-  <p>PID calculation includes:</p>
+  <p data-key="bod35"></p>
 
   <ul>
-    <li>error = current_position - desired_position</li>
-    <li>Derivative and integral of the error</li>
-    <li>Anti-windup to avoid excessive integral error accumulation</li>
+    <li data-key="bod36"></li>
+    <li data-key="bod37"></li>
+    <li data-key="bod38"></li>
   </ul>
 
   <p>
-   The implemented code ensures the motor stops if the error is within a <strong>predefined tolerance</strong> (TOLERANCE = 50), to avoid oscillations and overheating.
+   <span data-key="bod39"></span><strong data-key="bod40"></strong><span data-key="bod41"></span>
   </p>
 
-  <h3>Inverse Kinematics and Trajectories</h3>
+  <h3 data-key="bod42"></h3>
 
-  <h4>Kinematic Study</h4>
-  <p>An  <strong>inverse kinematics model</strong> was implemented for the robotic arm based on its dimensions (L2 = 12 cm, L3 = 15 cm). The model follows a modified SCARA-type manipulator structure and converts desired Cartesian coordinates (Px, Py, Pz) into motor angles:</p>
+  <h4 data-key="bod43"></h4>
+  <p><span data-key="bod44"></span><strong data-key="bod45"></strong><span data-key="bod46"></span></p>
   <ul>
-    <li>q1: stepper motor angle (base)</li>
-    <li>q2 and q3: DC motor angles (height and extension)</li>
+    <li data-key="bod47"></li>
+    <li data-key="bod48"></li>
   </ul>
 
-  <p>The solution is based on formulas derived from geometry and inverse trigonometry:</p>
+  <p data-key="bod49"></p>
 
      <div class="code-container">
   <button class="copy-button">📋</button>
@@ -684,12 +780,12 @@ q2 = atan2(pz, sqrt(px^2 + py^2)) - atan2(L3 * sin(q3), L2 + L3 * cos(q3));
 </div>
 
   <p>
-    Trajectories of  <strong>21 equidistant points</strong> in Cartesian space are generated and then converted into angle sequences for each motor.
+    <span data-key="bod50"></span><strong data-key="bod51"></strong><span data-key="bod52"></span>
   </p>
 
-  <h4>Angle to Pulse Conversion</h4>
+  <h4 data-key="bod53"></h4>
 
-     <p>Angles are converted to pulses for the DC motors using:</p>
+     <p data-key="bod54"></p>
 
      <div class="code-container">
   <button class="copy-button">📋</button>
@@ -701,29 +797,28 @@ pulse = round((Maxpulse * angle) / 360.0);
   </code></pre>
 </div>
 
-  <p>
-   This conversion is key for aligning commands from MATLAB with the embedded control system.
+  <p data-key="bod55">
   </p>
 
 
   
-  <h3>MATLAB User Interface (HMI)</h3>
+  <h3 data-key="bod56"></h3>
 
-   <p>
-   The graphical application developed in MATLAB App Designer allows:
+   <p data-key="bod57">
+   
   </p>
 
   <ul>
-    <li>Input of target coordinates.</li>
-    <li>Start/stop communication with the ESP32.</li>
-    <li>Sending trajectories and visualizing execution.</li>
-    <li>Verifying if the point is within the workspace (ellipsoid with safety conditions).</li>
-    <li>Displaying current position received from the robot.</li>
+    <li data-key="bod58"></li>
+    <li data-key="bod59"></li>
+    <li data-key="bod60"></li>
+    <li data-key="bod61"></li>
+    <li data-key="bod62"></li>
   </ul>
 
-  <h4>Workspace Validation</h4>
-  <p>
-    Before moving the arm, the system checks whether the input point is valid using a truncated ellipsoid inclusion function:
+  <h4 data-key="bod63"></h4>
+  <p data-key="bod64">
+    
   </p>
 
   
@@ -736,24 +831,21 @@ pulse = round((Maxpulse * angle) / 360.0);
   </code></pre>
 </div>
 
-  <p>
-    This restriction ensures the robot’s integrity and prevents impossible movements.
+  <p data-key="bod65">
   </p>
 
 
-  <h3>Graphs and Error Analysis</h3>
-  <p>
-   One of the system’s most useful features is the generation of 3D plots comparing:
+  <h3 data-key="bod66"></h3>
+  <p data-key="bod67">
   </p>
 
   <ul>
-    <li>Desired trajectory (green).</li>
-    <li>Actual executed trajectory (dotted red).</li>
-    <li>Point-by-point error (color-coded dots).</li>
+    <li data-key="bod68"></li>
+    <li data-key="bod69"></li>
+    <li data-key="bod70"></li>
   </ul>
 
-  <p>
-    Euclidean error between the desired and actual trajectories is calculated to experimentally validate system accuracy:
+  <p data-key="bod71">
   </p>
   
    <div class="code-container">
@@ -767,63 +859,63 @@ scatter3(..., error, 'filled');
   </code></pre>
 </div>
 
-<p>This visualization provides a powerful tool for debugging and improving the control system.</p>
+<p data-key="bod72"></p>
 
-<h3>Results and Learnings</h3>
+<h3 data-key="bod73"></h3>
 
-<h4>Achieved Results</h4>
+<h4 data-key="bod74"></h4>
 
   <ul>
 
-    <li>Functional and robust control of a 3-DOF robotic arm.</li>
-    <li>Effective MATLAB–ESP32 communication established.</li>
-    <li>MATLAB interface allows intuitive control and clear visualization.</li>
-    <li>The system maintains generally low error (< 1 cm), suitable for educational and prototyping applications.</li>
+    <li data-key="bod75"></li>
+    <li data-key="bod76"></li>
+    <li data-key="bod77"></li>
+    <li data-key="bod78"></li>
 
   </ul>
 
-<h4>Key Learnings</h4>
+<h4 data-key="bod79"></h4>
 
-<h5>Stepper Motors vs. DC Motors</h5>
+<h5 data-key="bod80"></h5>
 
  <ul>
 
-    <li>Stepper: Step-precision, ideal for base rotation. Easy to control without encoder, but requires care to avoid missed steps.</li>
-    <li>DC with encoder: Requires PID control, but offers smoother motion, higher power, and direct feedback.</li>
+    <li data-key="bod81"></li>
+    <li data-key="bod82"></li>
 
   </ul>
 
-<h5>PID Control</h5>
+<h5 data-key="bod83"></h5>
 
  <ul>
 
-    <li>Tuning kp, ki, kd is critical. Anti-windup is important.</li>
-    <li>Implementing PID directly on the microcontroller allows real-time and fast response.</li>
+    <li data-key="bod84"></li>
+    <li data-key="bod85"></li>
 
   </ul>
 
 
-<h5>MATLAB App Designer</h5>
+<h5 data-key="bod86"></h5>
 
  <ul>
 
-    <li>Powerful tool for building graphical interfaces.</li>
-    <li>Allows abstraction of complex commands with user-friendly design.</li>
-    <li>Robust and fast serial integration.</li>
+    <li data-key="bod87"></li>
+    <li data-key="bod88"></li>
+    <li data-key="bod89"></li>
 
   </ul>
 
 
-<h3>Conclusion</h3>
+<h3 data-key="bod90"></h3>
 
-<p>This project enabled the integration of hardware, control, and software into a complete educational robotic solution. Through tools like the ESP32, MATLAB, and automatic control knowledge, a functional system was achieved that solves inverse kinematics, executes trajectories, and measures errors—all in an accessible and modular platform.</p>
+<p data-key="bod91"></p>
 
-<p>The team worked collaboratively to address technical challenges, adapt solutions, and thoroughly document each phase. The result not only meets academic goals but also serves as a solid foundation for future extensions, such as vision-based closed-loop control, force sensor integration, or autonomous trajectory generation.</p>
+<p data-key="bod92"></p>
 
 
-  <p> All the code can be found in my <a href="https://github.com/Santiagoromerovila/Articulated-Robotic-Arm-Arduino-Matlab-" target="blank" rel="noopener noreferrer">Github</a>. </p>
+  <p><span data-key="bod93"></span><a href="https://github.com/Santiagoromerovila/Articulated-Robotic-Arm-Arduino-Matlab-" target="blank" rel="noopener noreferrer">Github</a>. </p>
 
-  <h3>Showcase</h3>
+  <h3 data-key="bod94"></h3>
     <img class="image1" src="roboticarm/Interfaz.png" alt="Interface">
      <img class="image" src="roboticarm/Trayectoria.png" alt="Theorical Trayectory vs Real Trayectory">
     </section>
