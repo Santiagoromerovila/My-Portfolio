@@ -42,6 +42,65 @@ document.addEventListener("DOMContentLoaded", () => {
   if (toggleBtn) {
     toggleBtn.addEventListener("click", () => {
       const newLang = localStorage.getItem("lang") === "es" ? "en" : "es";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      <script>
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  function handleGesture() {
+    const swipeDistance = touchEndX - touchStartX;
+
+    // Ajusta el umbral según sea necesario
+    const threshold = 50;
+
+    if (swipeDistance > threshold) {
+      goToPreviousPage(); // Deslizó a la derecha
+    } else if (swipeDistance < -threshold) {
+      goToNextPage(); // Deslizó a la izquierda
+    }
+  }
+
+  function goToPreviousPage() {
+    const pages = ['index.html', 'curriculum.html', 'proyectos.html', 'prensa.html'];
+    const current = window.location.pathname.split('/').pop();
+    const index = pages.indexOf(current);
+    if (index > 0) {
+      window.location.href = pages[index - 1];
+    }
+  }
+
+  function goToNextPage() {
+    const pages = ['index.html', 'curriculum.html', 'proyectos.html', 'prensa.html'];
+    const current = window.location.pathname.split('/').pop();
+    const index = pages.indexOf(current);
+    if (index < pages.length - 1 && index !== -1) {
+      window.location.href = pages[index + 1];
+    }
+  }
+
+  document.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  document.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleGesture();
+  });
+</script>
       setLanguage(newLang);
     });
   }
