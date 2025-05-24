@@ -42,13 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (toggleBtn) {
     toggleBtn.addEventListener("click", () => {
       const newLang = localStorage.getItem("lang") === "es" ? "en" : "es";
-
-
-
-
-
-
-
-
-
-
+      setLanguage(newLang);
+    });
+  }
+});
