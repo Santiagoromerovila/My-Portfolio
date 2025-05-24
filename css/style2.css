@@ -272,5 +272,10 @@ section ul li a:hover {
 }
 
 
-
+    .image2 {
+      width: 375px;
+      height: 500px;
+      transition: transform 0.2s;
+      border-radius: 5px;
+    }
 

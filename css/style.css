@@ -260,5 +260,10 @@ body.dark-mode .icon-dark {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-
+    .image2 {
+      width: 375px;
+      height: 500px;
+      transition: transform 0.2s;
+      border-radius: 5px;
+    }
 
