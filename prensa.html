@@ -5,96 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="Images/LOGO.png">
   <link rel="stylesheet" href="css/style3.css">
+  <script src="js/traducciones/main/language5.js" defer></script>
+  <script src="js/darkmode.js" defer></script>
+  <script src="js/swipe.js" defer></script>
   <title>Prensa y Actualidad - Santiago Bartolomé Romero Vila</title>
 </head>
 
-
-
-
-
-
-
-
-
-
-
-<script defer>
-    const translations = {
-      es: {
-         title1: "Prensa",
-         nave1: "Inicio",
-         nave2: "Currículum",
-         nave3: "Proyectos",
-         nave4: "Trabajos",
-         nave5: "Prensa",
-         title3: "Prensa",
-         bod1: "Madridiario: Un AT-AT de Star Wars desfila por Ciudad Universitaria",
-         bod2: "Este artículo de Madridiario cubre el proyecto de ingeniería galardonado que lideré en 2019 en el Colegio Mayor Moncloa, donde dirigí el diseño y la construcción de una réplica a escala real de un AT-AT como parte de un concurso local de Fallas. El proyecto destacó por su diseño modular innovador, la coordinación del equipo y la ejecución técnica — obteniendo finalmente el primer lugar y el reconocimiento de la Fundación Ingenio de la UPM."
-
-      },
-
-      en: {
-        title1:"Press",
-        nave1:"Home",
-        nave2:"Curriculum",
-        nave3:"Projects",
-        nave4:"Jobs",
-        nave5:"Press",
-        title3:"Press",
-        bod1:"Madridiario: Un AT-AT de Star Wars desfila por Ciudad Universitaria",
-        bod2:"This article by Madridiario covers the award-winning engineering project I led in 2019 at Colegio Mayor Moncloa, where I directed the design and construction of a life-size AT-AT replica as part of a local Falla competition. The project stood out for its innovative modular design, team coordination, and technical execution — ultimately earning first place and recognition from UPM's Fundación Ingenio."
-
-      }
-    };
-
-    function setLanguage(lang) {
-      localStorage.setItem("lang", lang);
-      document.querySelectorAll("[data-key]").forEach(el => {
-        const key = el.getAttribute("data-key");
-        if (translations[lang][key]) {
-          el.textContent = translations[lang][key];
-        }
-      });
-
-      const toggleBtn = document.getElementById("languageToggle");
-      if (toggleBtn) {
-  toggleBtn.innerHTML = lang === "es"
-    ? '<img src="https://flagcdn.com/w40/gb.png" alt="English"  class="image2">'
-    : '<img src="https://flagcdn.com/w40/es.png" alt="Español"  class="image2">';
-  }
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const currentLang = localStorage.getItem("lang") || "es";
-      setLanguage(currentLang);
-
-      const toggleBtn = document.getElementById("languageToggle");
-      if (toggleBtn) {
-        toggleBtn.addEventListener("click", () => {
-          const newLang = localStorage.getItem("lang") === "es" ? "en" : "es";
-          setLanguage(newLang);
-        });
-      }
-    });
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</head>
 <body>
   <header>
     <div class="profile2">
@@ -121,10 +37,8 @@
 
   <section>
     <a href="prensa/prensa-atat.html" class="news-item">
-      <h3 data-key="bod1">“AT-AT arde en Madrid”: cobertura del proyecto estrella de la Falla 2019</h3>
-      <p data-key="bod2">This article by Madridiario covers the award-winning engineering project I led in 2019 at Colegio Mayor Moncloa, where I directed the design and 
-        construction of a life-size AT-AT replica as part of a local Falla competition. The project stood out for its innovative modular design, team 
-        coordination, and technical execution — ultimately earning first place and recognition from UPM's Fundación Ingenio.</p>
+      <h3 data-key="bod1"></h3>
+      <p data-key="bod2"></p>
     </a>
 
   
@@ -149,73 +63,5 @@
     </div>
   </footer>
 
-  <script>
-    const toggleButton = document.getElementById('modeToggle');
-
-    function setMode(mode) {
-      if (mode === 'dark') {
-        document.body.classList.add('dark-mode');
-        toggleButton.textContent = '☀️';
-      } else {
-        document.body.classList.remove('dark-mode');
-        toggleButton.textContent = '🌙';
-      }
-    }
-
-    const storedMode = localStorage.getItem('theme');
-    if (storedMode) setMode(storedMode);
-
-    toggleButton.addEventListener('click', () => {
-      const isDark = document.body.classList.toggle('dark-mode');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      toggleButton.textContent = isDark ? '☀️' : '🌙';
-    });
-  </script>
-
-
-  <script>
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  function handleGesture() {
-    const swipeDistance = touchEndX - touchStartX;
-
-    // Ajusta el umbral según sea necesario
-    const threshold = 70;
-
-    if (swipeDistance > threshold) {
-      goToPreviousPage(); // Deslizó a la derecha
-    } else if (swipeDistance < -threshold) {
-      goToNextPage(); // Deslizó a la izquierda
-    }
-  }
-
-  function goToPreviousPage() {
-    const pages = ['SantiagoRomeroVila.html', 'curriculum.html', 'proyectos.html', 'prensa.html'];
-    const current = window.location.pathname.split('/').pop();
-    const index = pages.indexOf(current);
-    if (index > 0) {
-      window.location.href = pages[index - 1];
-    }
-  }
-
-  function goToNextPage() {
-    const pages = ['SamtiagoRomeroVila.html', 'curriculum.html', 'proyectos.html', 'prensa.html'];
-    const current = window.location.pathname.split('/').pop();
-    const index = pages.indexOf(current);
-    if (index < pages.length - 1 && index !== -1) {
-      window.location.href = pages[index + 1];
-    }
-  }
-
-  document.addEventListener('touchstart', e => {
-    touchStartX = e.changedTouches[0].screenX;
-  });
-
-  document.addEventListener('touchend', e => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleGesture();
-  });
-</script>
 </body>
 </html>
