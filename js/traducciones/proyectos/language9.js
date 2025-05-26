@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
         bod91: "Este proyecto permitió la integración de hardware, control y software en una solución robótica educativa completa. Mediante herramientas como ESP32, MATLAB y conocimientos de control automático, se logró un sistema funcional que resuelve cinemática inversa, ejecuta trayectorias y mide errores, todo en una plataforma accesible y modular.",
         bod92: "El equipo trabajó colaborativamente para abordar desafíos técnicos, adaptar soluciones y documentar exhaustivamente cada fase. El resultado no solo cumple objetivos académicos, sino que también sirve como base sólida para futuras extensiones, como control en lazo cerrado con visión, integración de sensores de fuerza o generación autónoma de trayectorias.",
         bod93: "Todo el código se puede encontrar en mi ",
-        bod94: "Showcase",
+        bod94: "Galería",
         bod98: "encoders de cuadratura ",
         bod99: "para una medición precisa de posición. Los encoders están conectados a pines con interrupciones (attachInterrupt) para registrar cada pulso generado por el movimiento del eje.",
         bod100: "Brazo robótico",
