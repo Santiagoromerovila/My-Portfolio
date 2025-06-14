@@ -45,13 +45,13 @@ document.addEventListener("DOMContentLoaded", () => {
       },
 
       en: {
-        title1:"Curriculum",
+        title1:"Resume",
         nave1:"Home",
-        nave2:"Curriculum",
+        nave2:"Resume",
         nave3:"Projects",
         nave4:"Jobs",
         nave5:"Press",
-        title3:"Curriculum",
+        title3:"Resume",
         bod1:"Education",
         bod2:"Bachelor’s Degree in Industrial Engineering – Polytechnic University of Madrid (2017 – 2025)",
         bod3:"Master’s Degree in Automation and Robotics – University of Stuttgart (2025 – 2026)",
