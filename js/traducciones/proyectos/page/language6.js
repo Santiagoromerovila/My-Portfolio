@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
       en: {
         title1:"Projects2",
         nave1:"Home",
-        nave2:"Curriculum",
+        nave2:"Resume",
         nave3:"Projects",
         nave4:"Jobs",
         nave5:"Press",
