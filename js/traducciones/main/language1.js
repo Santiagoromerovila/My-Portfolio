@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         title2: "Industrial Engineer | Automation & Intelligent Systems | Python | C++ | Robotics",
         conec: "Connect with me on LinkedIn",
         nave1:"Home",
-        nave2:"Curriculum",
+        nave2:"Resume",
         nave3:"Projects",
         nave4:"Jobs",
         nave5:"Press",
