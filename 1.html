@@ -1,0 +1,113 @@
+<!DOCTYPE html> 
+<html lang="en" dir="auto">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="Industrial Engineering,Robotics,Automation,Intelligence,Portfolio,Data Science,Data Analysis,Machine Learning">
+  <meta name="description" content="This is the personal website of Santiago Bartolome Romero Vila">
+  <meta name="author" content="Santiago Romero">
+  <link rel="canonical" href="https://santiagoromerovila.com/">
+  <link rel="icon" type="image/png" sizes="32x32" href="Images/LOGO.png">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/traducciones/main/language1.js" defer></script>
+  <script src="js/darkmode.js" defer></script>
+  <script src="js/swipe.js" defer></script>
+  <title data-key="title1"></title>
+  
+  <title>Santiago Bartolomé Romero Vila - Inicio</title>
+
+
+</style>
+
+
+</head>
+<body>
+<header>
+  <div class="profile">
+    <img src="Images/yo.jpg" alt="Foto de Santiago Bartolomé Romero Vila">
+    <div class="info">
+      <h1><a href="index.html">Santiago B. Romero Vila</a></h1>
+      <p>Industrial Engineer | Automation & Intelligent Systems | Python | C++ | Robotics | Sustainability Advocate</p>
+      <a class="linkedin" href="https://www.linkedin.com/in/santiago-bartolom%C3%A9-romero-vila" target="_blank" rel="noopener noreferrer">Connect with me on LinkedIn</a>
+    </div>
+    <button id="modeToggle">🌙</button>
+  </div>
+</header>
+
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="curriculum.html">Curriculum</a>
+    <a href="proyectos.html">Projects</a>
+    <a href="trabajos.html">Jobs</a>
+    <a href="prensa.html">Press</a>
+  </nav>
+
+<main>
+
+  <section id="about">
+
+    <h2>Welcome to my personal space!</h2>
+
+    <p>I’m Santiago Romero Vila, an Industrial Engineering student at UPM specializing in Automation and Mechatronics, with a passion for robotics, intelligent systems, and technological innovation.</p>
+
+    <p>Since the start of my degree, I’ve actively sought to bridge theory with practice—leading hands-on projects like building functional robotic prototypes using PID control, embedded systems, and MATLAB/Simulink simulations. My proactive approach has allowed me to work on complex challenges such as closed-loop motion control, kinematic modeling, and multi-sensor integration, always aiming to develop real-world solutions.</p>
+
+    <p>Beyond the lab, I’ve led and coordinated teams of over 80 people in large-scale engineering and cultural events, and I’m currently collaborating with NGOs through Volunfair to connect engineering with social impact. I’m also developing web programming skills via a Harvard online course, and continuously strengthening my proficiency in Python, C++, and automation frameworks.</p>
+
+    <p>Driven by curiosity, sustainability, and a systems-thinking mindset, I aim to contribute to the digital transformation of industry-where robotics and automation intersect with human needs and global challenges.</p>
+
+    <p>Through this space, I share insights from my journey across engineering, robotics, and impactful innovation. Let’s build the future, one intelligent system at a time.</p>
+ 
+  </section>
+
+</main>
+
+  <footer>
+    <p>© 2025 <a href="https://www.linkedin.com/in/santiago-bartolom%C3%A9-romero-vila" target="_blank" rel="noopener noreferrer">Santiago Bartolomé Romero Vila</a>
+        </p>
+        <div class="icon-links">
+  <a href="https://www.linkedin.com/in/santiago-bartolom%C3%A9-romero-vila" target="_blank" rel="noopener noreferrer">
+    <img class="icon icon-light" src="Images/link bien.jpg" alt="LinkedIn">
+    <img class="icon icon-dark" src="Images/link black bien.jpg" alt="LinkedIn">
+  </a>
+  <a href="mailto:santiago.romero.vila@gmail.com">
+    <img class="icon icon-light" src="Images/email lu.jfif" alt="Correo">
+    <img class="icon icon-dark" src="Images/email bla bien.jpg" alt="Correo">
+  </a>
+    <a href="https://github.com/Santiagoromerovila" target="_blank" rel="noopener noreferrer">
+    <img class="icon icon-light" src="Images/git white.jpeg" alt="Github">
+    <img class="icon icon-dark" src="Images/git black.jpeg" alt="Github">
+  </a>
+</div>
+
+  </footer>
+
+
+  <script>
+    const toggleButton = document.getElementById('modeToggle');
+
+    function setMode(mode) {
+      if (mode === 'dark') {
+        document.body.classList.add('dark-mode');
+        toggleButton.textContent = '☀️';
+      } else {
+        document.body.classList.remove('dark-mode');
+        toggleButton.textContent = '🌙';
+      }
+    }
+
+    const storedMode = localStorage.getItem('theme');
+    if (storedMode) setMode(storedMode);
+
+    toggleButton.addEventListener('click', () => {
+      const isDark = document.body.classList.toggle('dark-mode');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      toggleButton.textContent = isDark ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>
