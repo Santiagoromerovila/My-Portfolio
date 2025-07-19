@@ -1,0 +1,6 @@
+
+User-agent: *
+Disallow:
+
+
+Sitemap: https://www.santiagoromerovila.com/sitemap.xml
