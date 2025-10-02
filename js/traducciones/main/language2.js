@@ -40,7 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
         bod30: "Certificado Profesional en Machine Learning (IBM–Coursera)",
         bod31: "CS50's Introducción a la Inteligencia Artificial con Python (Harvard)",
         bod32: "Uso de Python para la Investigación (Harvard)",
-        bod33: "Ciencia de Datos: Machine Learning (Harvard)"
+        bod33: "Ciencia de Datos: Machine Learning (Harvard)",
+        bod35: "Ciencia de Datos 101 (IBM-Coursera)"
 
       },
 
@@ -85,6 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
         bod31:"CS50's Introduction to Artificial Intelligence with Python (Harvard)",
         bod32:"Using Python for Research (Harvard)",
         bod33:"Data Science: Machine Learning (Harvard)",
+        bod35:"Data Science 101 (IBM-Coursera)"
 
       }
     };
@@ -118,3 +120,4 @@ function setLanguage(lang) {
     });
   }
 });
+
